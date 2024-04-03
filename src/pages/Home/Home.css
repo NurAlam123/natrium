@@ -1,0 +1,52 @@
+/* Style my name */
+.name {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 10px;
+    color: #d6d6d6;
+}
+
+.name>span {
+    margin: 0;
+    font-size: 10rem;
+}
+
+/* Style links */
+.container {
+    font-size: 1.4rem;
+}
+
+.link {
+    text-decoration: none;
+    color: #efefef;
+}
+
+.link:hover {
+    color: #c3c3c3;
+}
+
+.link-arrow {
+    visibility: hidden;
+    color: #6090e8;
+    transition: visibility 100ms ease-in-out;
+}
+
+.link:hover .link-arrow {
+    visibility: inherit;
+}
+
+/* Media Queries */
+@media screen and (max-width: 480px) {
+    .name {
+        letter-spacing: 2px;
+    }
+
+    .name>span {
+        font-size: 5.8rem;
+    }
+
+    .container {
+        font-size: 1rem;
+    }
+}
