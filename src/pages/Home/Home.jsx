@@ -13,13 +13,13 @@ const Home = () => {
             <div className="container">
                 <Link to="/about" className="link">
                     <span className="link-arrow"> &gt; </span>About
-                </Link><br />
+                </Link>
                 <Link to="/projects" className="link">
                     <span className="link-arrow"> &gt; </span>Projects
-                </Link><br />
+                </Link>
                 <Link to="/contact" className="link">
                     <span className="link-arrow"> &gt; </span>Contact
-                </Link><br />
+                </Link>
             </div>
         </>
     )

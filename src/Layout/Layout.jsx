@@ -16,7 +16,6 @@ const Layout = () => {
                         <a href='https://github.com/nuralam123' target='_blank'><FaGithub /></a>
                         <a href='https://facebook.com/nur.0.alam' target='_blank'><FaFacebook /></a>
                     </div>
-
                 </section>
                 <section>
                     <p>&copy; copyright - 2024</p>

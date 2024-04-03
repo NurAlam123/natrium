@@ -20,10 +20,11 @@
 .link {
     text-decoration: none;
     color: #efefef;
+    margin-right: 20px;
 }
 
 .link:hover {
-    color: #c3c3c3;
+    color: #6090e8;
 }
 
 .link-arrow {
