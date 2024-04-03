@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom'
 import './Home.css'
 import useMouseHoverEffect from '../../hooks/useMouseHoverEffect'
+import CursorBlur from '../../components/shared/CursorBlur';
 
 const Home = () => {
     useMouseHoverEffect();
     return (
         <>
+            <CursorBlur />
             <div className="name">
                 <span>Nur Alam</span>
             </div>

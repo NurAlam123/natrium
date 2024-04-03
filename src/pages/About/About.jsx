@@ -1,11 +1,10 @@
+import CursorBlur from "../../components/shared/CursorBlur";
 import GoBackButton from "../../components/ui/GoBackButton";
-import useMouseHoverEffect from "../../hooks/useMouseHoverEffect"
 
 const About = () => {
-    useMouseHoverEffect();
     return (
         <section>
-            <div className="cursor" id="cursor"></div>
+            <CursorBlur />
             <div style={{
                 marginBottom: '60px'
             }}>
