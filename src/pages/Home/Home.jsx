@@ -6,7 +6,6 @@ const Home = () => {
     useMouseHoverEffect();
     return (
         <>
-            <div className="cursor" id="cursor"></div>
             <div className="name">
                 <span>Nur Alam</span>
             </div>

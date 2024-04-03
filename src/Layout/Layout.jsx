@@ -6,6 +6,7 @@ const Layout = () => {
     return (
         <>
             <main>
+
                 <Outlet />
             </main>
             <footer>
@@ -18,7 +19,7 @@ const Layout = () => {
                     </div>
                 </section>
                 <section>
-                    <p>&copy; copyright - 2024</p>
+                    <span> &copy; copyright - 2024</span>
                 </section>
             </footer>
         </>
