@@ -1,5 +1,6 @@
 import CursorBlur from "../../components/shared/CursorBlur";
 import GoBackButton from "../../components/ui/GoBackButton";
+import NaElectrons from "../../components/ui/NaElectrons";
 import './About.css'
 
 const About = () => {
@@ -7,15 +8,18 @@ const About = () => {
         <section>
             <CursorBlur />
             <div style={{
-                marginBottom: '60px'
+                marginBottom: '60px',
             }}>
                 <GoBackButton />
             </div>
             <section className="about">
-                <h1 className="about-h1">Hi, </h1>
-                <h2 className="about-h2">
-                    I am <span className="about-name bold">Nur Alam<span className="animation-ping">.</span></span>
-                </h2>
+                <NaElectrons />
+                <div>
+                    <h1 className="about-h1">Hi, </h1>
+                    <h2 className="about-h2">
+                        I am <span className="about-name bold">Nur Alam<span className="animation-ping">.</span></span>
+                    </h2>
+                </div>
             </section>
         </section>
     )

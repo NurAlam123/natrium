@@ -82,7 +82,7 @@ footer {
 
 /* Animations */
 .animation-ping {
-    animation: ping 1s infinite;
+    animation: ping 2s infinite;
     animation-timing-function: ease-in-out;
 }
 @keyframes ping {
@@ -96,5 +96,27 @@ footer {
 
     100% {
         opacity: 0.6;
+    }
+}
+
+.animation-spin {
+    animation: spin 2s infinite;
+    animation-timing-function: linear;
+}
+.animation-spin-3s {
+    animation: spin 3s infinite;
+    animation-timing-function: linear;
+}
+.animation-spin-4s {
+    animation: spin 4s infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    form {
+        transform: rotate(-360deg);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }
