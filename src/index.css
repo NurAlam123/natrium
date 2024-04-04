@@ -90,8 +90,8 @@ footer {
 }
 
 @keyframes spin {
-    form {
-        transform: rotate(-360deg);
+    from {
+        transform: rotate(0deg);
     }
 
     to {

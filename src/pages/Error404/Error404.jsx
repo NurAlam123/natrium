@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import NaElectrons from '../../components/shared/NaElectrons/NaElectrons'
-import GoBackButton from '../../components/ui/GoBackButton'
 import './Error404.css'
 
 const Error404 = () => {
