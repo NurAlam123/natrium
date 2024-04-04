@@ -13,5 +13,5 @@
 .error-home-link {
     font-weight: 600;
     text-decoration: none;
-    color: #6090e8;
+    color: var(--text-blue);
 }

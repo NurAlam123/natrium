@@ -1,6 +1,14 @@
+/* Style Home Page */
+.home-page {
+    display: flex;
+    height: 100lvh;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Style location and my name */
 .location {
-    color: #b5b5b5;
+    color: var(--text-gray);
     margin: 0;
     display: flex;
     align-items: center;
@@ -15,7 +23,7 @@
     font-weight: 600;
     font-style: normal;
     letter-spacing: 10px;
-    color: #d6d6d6;
+    color: var(--secondary-text-color);
     margin: 0;
     font-size: 10rem;
     display: block;
@@ -29,17 +37,17 @@
 
 .link {
     text-decoration: none;
-    color: #efefef;
+    color: var(--primary-text-color);
     margin-right: 20px;
 }
 
 .link:hover {
-    color: #6090e8;
+    color: var(--text-blue);
 }
 
 .link-arrow {
     visibility: hidden;
-    color: #6090e8;
+    color: var(--text-blue);
     transition: visibility 100ms ease-in-out;
 }
 

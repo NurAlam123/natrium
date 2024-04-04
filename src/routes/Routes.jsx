@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home/Home";
-import Layout from "../Layout/Layout";
+import Root from "../Layout/Root";
 import About from "../pages/About/About";
 import Projects from "../pages/Projects/Projects";
 import Error404 from "../pages/Error404/Error404";
@@ -8,12 +8,12 @@ import Error404 from "../pages/Error404/Error404";
 const route = createBrowserRouter([
     {
         path: '/',
-        element: <Layout />,
+        element: <Home />
+    },
+    {
+        path: '/',
+        element: <Root />,
         children: [
-            {
-                path: '/',
-                element: <Home />
-            },
             {
                 path: '/about',
                 element: <About />
@@ -22,7 +22,7 @@ const route = createBrowserRouter([
                 path: '/projects',
                 element: <Projects />
             }
-        ],
+        ]
     },
     {
         path: '*',

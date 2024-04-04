@@ -30,6 +30,8 @@ const useMouseHoverEffect = () => {
 const changeCursorOnMove = (x, y) => {
     const cursorDiv = document.querySelector(".cursor");
 
+    if (!cursorDiv) return;
+
     cursorDiv.style.setProperty('--x', `${x}px`);
     cursorDiv.style.setProperty('--y', `${y}px`);
     cursorDiv.style.opacity = 1;
@@ -40,6 +42,8 @@ const changeCursorOnMove = (x, y) => {
 
 const resetCursorOnEnd = () => {
     const cursorDiv = document.querySelector(".cursor");
+
+    if (!cursorDiv) return;
 
     cursorDiv.style.setProperty('--visible', 'hidden');
     cursorDiv.style.opacity = 0;

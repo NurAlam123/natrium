@@ -2,13 +2,13 @@ import { Outlet } from 'react-router-dom'
 import { FaEnvelope, FaFacebook, FaGithub } from 'react-icons/fa'
 
 
-const Layout = () => {
+const Root = () => {
     return (
-        <>
-            <main>
+        <main>
+            <section>
                 <Outlet />
-            </main>
-            <footer>
+            </section>
+            <footer className='root-footer'>
                 <section className='socials'>
                     <p>Socials</p>
                     <div className='social-links'>
@@ -18,8 +18,8 @@ const Layout = () => {
                     </div>
                 </section>
             </footer>
-        </>
+        </main>
     )
 }
 
-export default Layout
+export default Root
