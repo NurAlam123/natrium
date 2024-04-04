@@ -1,5 +1,6 @@
 import CursorBlur from "../../components/shared/CursorBlur";
 import GoBackButton from "../../components/ui/GoBackButton";
+import './About.css'
 
 const About = () => {
     return (
@@ -10,9 +11,11 @@ const About = () => {
             }}>
                 <GoBackButton />
             </div>
-            <section>
-                <h2>Hi, I am Nur Alam.</h2><br />
-                A programmer, web developer.
+            <section className="about">
+                <h1 className="about-h1">Hi, </h1>
+                <h2 className="about-h2">
+                    I am <span className="about-name bold">Nur Alam<span className="animation-ping">.</span></span>
+                </h2>
             </section>
         </section>
     )

@@ -55,14 +55,15 @@ footer {
     margin-bottom: 20px;
 }
 
-.socials > p {
+.socials>p {
     margin-bottom: 10px;
 }
 
 .social-links {
     margin-left: 20px;
 }
-.social-links > a {
+
+.social-links>a {
     text-decoration: none;
     color: inherit;
     font-size: 1.8rem;
@@ -70,6 +71,30 @@ footer {
     transition: color 500ms ease-in-out;
 }
 
-.social-links > a:hover{
+.social-links>a:hover {
     color: #fff;
+}
+
+/* Predefined css */
+.bold {
+    font-weight: 600;
+}
+
+/* Animations */
+.animation-ping {
+    animation: ping 1s infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes ping {
+    0% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
 }

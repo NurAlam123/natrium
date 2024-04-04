@@ -14,7 +14,7 @@ const useMouseHoverEffect = () => {
 
         // For phones
         document.addEventListener('touchmove', (event) => {
-            let touch = event.touches[0]
+            let touch = event.touches[0];
             let x = touch.pageX;
             let y = touch.pageY;
 
