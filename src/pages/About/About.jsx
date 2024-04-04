@@ -12,11 +12,8 @@ const About = () => {
             }}>
                 <GoBackButton />
             </div>
-            <section className="about">
-                <div className="about-na-container">
-                    <NaElectrons />
-                </div>
-                <div>
+            <section className="about-container">
+                <div className="about">
                     <h1 className="about-h1">Hi, </h1>
                     <h2 className="about-h2">
                         I am <span className="about-name bold">Nur Alam<span className="animation-ping">.</span></span>

@@ -3,12 +3,14 @@ import './Home.css'
 import useMouseHoverEffect from '../../hooks/useMouseHoverEffect'
 import CursorBlur from '../../components/shared/CursorBlur/CursorBlur';
 import { FaLocationArrow } from 'react-icons/fa';
+import NaElectrons from '../../components/shared/NaElectrons/NaElectrons';
 
 const Home = () => {
     useMouseHoverEffect();
     return (
         <>
             <CursorBlur />
+            <NaElectrons />
             <div>
                 <div className='location'>
                     <p><FaLocationArrow /></p>

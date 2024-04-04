@@ -1,7 +1,7 @@
 * {
     margin: 0;
 }
-.about {
+.about-container {
     margin: 0;
     display: flex;
     justify-content: center;
