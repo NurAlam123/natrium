@@ -1,6 +1,6 @@
-import CursorBlur from "../../components/shared/CursorBlur";
+import CursorBlur from "../../components/shared/CursorBlur/CursorBlur";
 import GoBackButton from "../../components/ui/GoBackButton";
-import NaElectrons from "../../components/ui/NaElectrons";
+import NaElectrons from "../../components/shared/NaElectrons/NaElectrons";
 import './About.css'
 
 const About = () => {

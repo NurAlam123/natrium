@@ -1,0 +1,24 @@
+.error-404-main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-404-na-container {
+    position: fixed;
+}
+
+.error-container {
+    margin-top: 500px;
+}
+
+.error-text {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.error-home-link {
+    font-weight: 600;
+    text-decoration: none;
+    color: #6090e8;
+}

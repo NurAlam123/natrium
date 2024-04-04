@@ -1,4 +1,4 @@
-import "./styles/NaElectrons.css"
+import "./NaElectrons.css"
 
 const NaElectrons = () => {
     return (

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import './Home.css'
 import useMouseHoverEffect from '../../hooks/useMouseHoverEffect'
-import CursorBlur from '../../components/shared/CursorBlur';
+import CursorBlur from '../../components/shared/CursorBlur/CursorBlur';
 import { FaLocationArrow } from 'react-icons/fa';
 
 const Home = () => {
