@@ -1,15 +1,19 @@
 .error-404-main-container {
-    display: flex;
+    position: relative;
+    /* display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
 
 .error-404-na-container {
-    position: fixed;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .error-container {
-    margin-top: 500px;
+    margin-top: 200px;
 }
 
 .error-text {

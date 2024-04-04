@@ -13,7 +13,9 @@ const About = () => {
                 <GoBackButton />
             </div>
             <section className="about">
-                <NaElectrons />
+                <div className="about-na-container">
+                    <NaElectrons />
+                </div>
                 <div>
                     <h1 className="about-h1">Hi, </h1>
                     <h2 className="about-h2">

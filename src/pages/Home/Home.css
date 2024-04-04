@@ -51,9 +51,6 @@
 @media screen and (max-width: 480px) {
     .home-name {
         letter-spacing: 2px;
-    }
-
-    .home-name>span {
         font-size: 5.8rem;
     }
 
