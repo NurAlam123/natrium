@@ -1,6 +1,6 @@
 import { FaArrowLeft } from "react-icons/fa"
 import { useNavigate } from "react-router-dom";
-import './GoBackButton.css';
+import './styles/GoBackButton.css';
 
 
 const GoBackButton = () => {

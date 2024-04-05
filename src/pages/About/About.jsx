@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
+import CursorBlur from "../../components/shared/CursorBlur/CursorBlur";
+import GoBackButton from "../../components/ui/GoBackButton";
 import './About.css'
-import CursorBlur from "../../components/shared/ui/CursorBlur/CursorBlur";
-import GoBackButton from "../../components/shared/ui/GoBackButton/GoBackButton";
 
 const About = () => {
     return (

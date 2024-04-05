@@ -1,4 +1,4 @@
-import useMouseHoverEffect from '../../../../hooks/useMouseHoverEffect'
+import useMouseHoverEffect from '../../../hooks/useMouseHoverEffect'
 import './CursorBlur.css'
 
 const CursorBlur = () => {
