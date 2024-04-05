@@ -1,5 +1,6 @@
 .error-404-main-container {
     display: flex;
+    height: 100lvh;
     flex-direction: column;
     justify-content: center;
     align-items: center;

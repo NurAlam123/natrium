@@ -12,6 +12,7 @@ const useMouseHoverEffect = () => {
             resetCursorOnEnd();
         })
 
+
         // For phones
         document.addEventListener('touchmove', (event) => {
             let touch = event.touches[0];

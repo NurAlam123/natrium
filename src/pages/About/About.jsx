@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import CursorBlur from "../../components/shared/CursorBlur/CursorBlur";
 import GoBackButton from "../../components/ui/GoBackButton";
-// import NaElectrons from "../../components/shared/NaElectrons/NaElectrons";
 import './About.css'
 
 const About = () => {
@@ -29,7 +28,7 @@ const About = () => {
                         <strong>And don&apos;t have any work experiences till now.</strong>
                     </p>
                     <div className="skill-container">
-                        <h3>Skills</h3>
+                        <h2>Skills</h2>
                         <ul>
                             <li>Python</li>
                             <li>Javascript</li>
