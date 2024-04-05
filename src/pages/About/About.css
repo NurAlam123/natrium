@@ -2,10 +2,6 @@
     margin: 0;
 }
 
-.about-page {
-    margin: 20px 35px;
-}
-
 .about-container {
     display: flex;
     flex-direction: column;

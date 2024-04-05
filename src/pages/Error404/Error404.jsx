@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import NaElectrons from '../../components/shared/NaElectrons/NaElectrons'
+import NaElectrons from '../../components/shared/ui/NaElectrons/NaElectrons'
 import './Error404.css'
 
 const Error404 = () => {

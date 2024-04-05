@@ -15,15 +15,24 @@
 
     /* color variables */
     --bg-dark: #0C0C0C;
+    /* Text */
     --text-dark: #0C0C0C;
     --primary-text-color: #efefef;
     --secondary-text-color: #d6d6d6;
     --text-gray: #b5b5b5;
     --text-blue: #6090e8;
-
+    /* Button */
     --btn-dark-1: rgba(255, 255, 255, 0.1);
     --btn-dark-2: rgba(255, 255, 255, 0.2);
     --btn-dark-3: rgba(255, 255, 255, 0.3);
+    /* background */
+    --bg-dark-1: rgba(255, 255, 255, 0.1);
+    --bg-dark-2: rgba(255, 255, 255, 0.2);
+    --bg-dark-3: rgba(255, 255, 255, 0.3);
+}
+
+main {
+    margin: 20px 35px;
 }
 
 /* Footer */
@@ -34,7 +43,7 @@ footer {
 }
 
 .root-footer {
-    margin-left: 45px;
+    margin-left: 10px;
 }
 
 .socials {
@@ -88,6 +97,10 @@ footer {
     color: var(--text-dark);
     background-color: #fff;
     border: 1px solid var(--btn-dark-3);
+}
+
+.back-btn-space {
+    margin: 30px 0px;
 }
 
 /* Animations */

@@ -1,5 +1,5 @@
-import CursorBlur from "../../components/shared/CursorBlur/CursorBlur"
-import GoBackButton from "../../components/ui/GoBackButton"
+import GoBackButton from "../../components/shared/ui/GoBackButton/GoBackButton"
+import CursorBlur from "../../components/shared/ui/CursorBlur/CursorBlur"
 
 const Projects = () => {
   return (

@@ -1,0 +1,26 @@
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.note-area {
+    margin-top: 15px;
+    width: 400px;
+    height: 200px;
+    outline: none;
+    padding: 22px;
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: var(--bg-dark-3);
+    background-color: var(--bg-dark-1);
+    color: var(--text-gray);
+    resize: none;
+    font-size: 1rem;
+}
+
+.contact-btn-send {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+}
