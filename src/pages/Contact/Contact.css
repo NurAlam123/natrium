@@ -15,7 +15,7 @@
 .note-area {
     margin-top: 15px;
     width: 400px;
-    height: 200px;
+    height: 300px;
     outline: none;
     padding: 22px;
     border-radius: 8px;
@@ -46,7 +46,6 @@
     .note-area {
         width: 80%;
         height: 300px;
-        /* font-size: 0.9rem; */
     }
     .character-counter {
         right: 6%;

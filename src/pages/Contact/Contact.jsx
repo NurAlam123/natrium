@@ -1,31 +1,35 @@
-
 import CursorBlur from '../../components/shared/CursorBlur/CursorBlur';
 import GoBackButton from '../../components/shared/ui/GoBackButton/GoBackButton';
+// import LoadingSpinner from '../../components/shared/ui/LoadingSpinner';
 import './Contact.css'
-// import sendMessage from "../../utils/discord-webhook"
+import sendMessage from "../../utils/discord-webhook"
 import { useState } from "react"
 
 const Contact = () => {
 
     const [characters, setCharacters] = useState(0);
     const [overLimit, setOverLimit] = useState(false);
-    const [voidMessage, setVoidMessage] = useState(true)
+    const [disableButton, setDisableButton] = useState(true);
+    const [loading, setLoading] = useState(true)
     const charactersLimit = 3000;
 
 
     const countCharacters = (event) => {
         const textLength = event.target.value.length;
-        textLength > 0 && setVoidMessage(false);
+        textLength > 0 ? setDisableButton(false) : setDisableButton(true);
         if (textLength >= charactersLimit - 20) setOverLimit(true);
         else setOverLimit(false);
         setCharacters(textLength);
     }
 
-    const sendBtn = () => {
+    const sendBtn = async () => {
         const message_area = document.querySelector('.note-area');
         const message = message_area.value;
-        console.log("Button disable")
-        // const message;
+        const send = await sendMessage(message);
+        setLoading(true)
+        setDisableButton(true)
+        if (send)
+            console.log(send)
     }
     return (
         <main className='contact-main-container'>
@@ -38,7 +42,7 @@ const Contact = () => {
                     <div>
                         Discord
                     </div>
-                    <div>
+                    <div className='note-main-container'>
                         <p className="bold">Want to send anonymous message?</p>
                         <div className="note-container">
                             <textarea
@@ -50,7 +54,10 @@ const Contact = () => {
                             </textarea>
                             <p className={`character-counter ${overLimit && 'warning'}`}>{characters}/{charactersLimit}</p>
                         </div>
-                        <button className="btn btn-pill contact-btn-send" onClick={sendBtn} disabled={voidMessage}>Send</button>
+                        <button className="btn btn-pill contact-btn-send" onClick={sendBtn} disabled={disableButton}>Send</button>
+                        {
+                            // loading && <LoadingSpinner />
+                        }
                     </div>
                 </div>
             </section>
