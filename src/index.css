@@ -93,14 +93,24 @@ footer {
     border-radius: 50px;
 }
 
-.btn:hover {
+.btn:hover:not(:disabled) {
     color: var(--text-dark);
     background-color: #fff;
     border: 1px solid var(--btn-dark-3);
 }
 
+.btn:disabled {
+    cursor: default;
+    opacity: 0.5;
+}
+
 .back-btn-space {
     margin: 30px 0px;
+}
+
+.warning {
+    color: #d90429!important;
+    opacity: 1!important;
 }
 
 /* Animations */

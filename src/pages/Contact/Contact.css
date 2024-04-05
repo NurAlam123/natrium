@@ -4,6 +4,10 @@
     align-items: center;
 }
 
+.note-container {
+    position: relative;
+}
+
 .note-area {
     margin-top: 15px;
     width: 400px;
@@ -19,8 +23,28 @@
     font-size: 1rem;
 }
 
+.character-counter {
+    position: absolute;
+    bottom: 13px;
+    right: 8px;
+    font-size: 0.86rem;
+    color: var(--text-gray);
+    opacity: 0.2;
+}
+
 .contact-btn-send {
     display: block;
     width: 100%;
     cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+    .note-area {
+        width: 80%;
+        height: 300px;
+        /* font-size: 0.9rem; */
+    }
+    .character-counter {
+        right: 6%;
+    }
 }
