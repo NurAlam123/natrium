@@ -1,6 +1,6 @@
 import CursorBlur from '../../components/shared/CursorBlur/CursorBlur';
 import GoBackButton from '../../components/shared/ui/GoBackButton/GoBackButton';
-// import LoadingSpinner from '../../components/shared/ui/LoadingSpinner';
+import LoadingSpinner from '../../components/shared/ui/LoadingSpinner/LoadingSpinner';
 import './Contact.css'
 import sendMessage from "../../utils/discord-webhook"
 import { useState } from "react"
@@ -10,7 +10,7 @@ const Contact = () => {
     const [characters, setCharacters] = useState(0);
     const [overLimit, setOverLimit] = useState(false);
     const [disableButton, setDisableButton] = useState(true);
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
     const charactersLimit = 3000;
 
 
@@ -25,11 +25,14 @@ const Contact = () => {
     const sendBtn = async () => {
         const message_area = document.querySelector('.note-area');
         const message = message_area.value;
-        const send = await sendMessage(message);
         setLoading(true)
         setDisableButton(true)
-        if (send)
-            console.log(send)
+        const send = await sendMessage(message);
+        // if (send) {
+
+        // }
+        setLoading(false)
+        setDisableButton(false)
     }
     return (
         <main className='contact-main-container'>
@@ -54,10 +57,12 @@ const Contact = () => {
                             </textarea>
                             <p className={`character-counter ${overLimit && 'warning'}`}>{characters}/{charactersLimit}</p>
                         </div>
-                        <button className="btn btn-pill contact-btn-send" onClick={sendBtn} disabled={disableButton}>Send</button>
-                        {
-                            // loading && <LoadingSpinner />
-                        }
+                        <button className="btn btn-pill contact-btn-send" onClick={sendBtn} disabled={disableButton}>
+                            {loading ?
+                                <LoadingSpinner size={25} /> :
+                                "Send"
+                            }
+                        </button>
                     </div>
                 </div>
             </section>
