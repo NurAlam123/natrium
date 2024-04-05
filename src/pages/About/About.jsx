@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import CursorBlur from "../../components/shared/CursorBlur/CursorBlur";
-import GoBackButton from "../../components/ui/GoBackButton";
+import GoBackButton from "../../components/shared/ui/GoBackButton/GoBackButton";
 import './About.css'
 
 const About = () => {
