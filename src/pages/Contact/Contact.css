@@ -8,6 +8,29 @@
     align-items: center;
 }
 
+.contact-links {
+    margin-left: 25px;
+    display: flex;
+    gap: 10px;
+}
+
+.contact-link {
+    cursor: pointer;
+    display: block;
+    font-size: 2.5rem;
+    color: var(--secondary-text-color);
+}
+
+.contact-link>div:hover {
+    color: var(--text-gray);
+    filter: blur(5px);
+}
+
+
+.note-main-container {
+    margin-top: 25px;
+}
+
 .note-container {
     position: relative;
 }
@@ -47,6 +70,7 @@
         width: 80%;
         height: 300px;
     }
+
     .character-counter {
         right: 6%;
     }

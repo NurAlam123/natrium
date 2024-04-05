@@ -16,7 +16,6 @@ const sendMessage = async (message) => {
 
     const res = await fetch(webhookUrl, requestOptions);
     const status = res.status;
-    // console.log(status)
     if(status == 400) return false;
     return true
 }
