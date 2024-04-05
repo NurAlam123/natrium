@@ -4,6 +4,7 @@ import Root from "../Layout/Root";
 import About from "../pages/About/About";
 import Projects from "../pages/Projects/Projects";
 import Error404 from "../pages/Error404/Error404";
+import Contact from "../pages/Contact/Contact";
 
 const route = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const route = createBrowserRouter([
                 element: <Projects />
             }
         ]
+    },
+    {
+        path: '/contact',
+        element: <Contact />
     },
     {
         path: '*',

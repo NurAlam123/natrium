@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 import './Home.css'
 import useMouseHoverEffect from '../../hooks/useMouseHoverEffect'
 import { FaLocationArrow } from 'react-icons/fa';
-import CursorBlur from '../../components/shared/CursorBlur/CursorBlur';
-import NaElectrons from '../../components/shared/NaElectrons/NaElectrons';
 import { FaEnvelope, FaFacebook, FaGithub } from 'react-icons/fa'
+import NaElectrons from '../../components/shared/ui/NaElectrons/NaElectrons';
+import CursorBlur from '../../components/shared/CursorBlur/CursorBlur';
 
 
 const Home = () => {
