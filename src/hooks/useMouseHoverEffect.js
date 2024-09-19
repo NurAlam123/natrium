@@ -3,30 +3,37 @@ import { useEffect } from "react";
 const useMouseHoverEffect = () => {
     useEffect(() => {
         // For computer
-        document.addEventListener('mousemove', (event) => {
-            let x = event.pageX;
-            let y = event.pageY;
-            changeCursorOnMove(x, y);
-        })
-        document.addEventListener('mouseleave', () => {
-            resetCursorOnEnd();
-        })
+        document.addEventListener('mousemove', mouseMoveEvent);
+        document.addEventListener('mouseleave', resetCursorOnEnd);
 
 
         // For phones
-        document.addEventListener('touchmove', (event) => {
-            let touch = event.touches[0];
-            let x = touch.pageX;
-            let y = touch.pageY;
-
-            changeCursorOnMove(x, y);
-        })
-        document.addEventListener('touchend', () => {
-            resetCursorOnEnd();
-        })
+        document.addEventListener('touchmove', touchMoveEvent);
+        document.addEventListener('touchend', resetCursorOnEnd);
 
     }, [])
+
+    return () => {
+        document.removeEventListener('mousemove', mouseMoveEvent);
+        document.removeEventListener('mouseleave', resetCursorOnEnd);
+        document.removeEventListener('touchmove', touchMoveEvent);
+        document.removeEventListener('touchend', resetCursorOnEnd);
+    }
 }
+
+const mouseMoveEvent = (event) => {
+    const x = event.clientX;
+    const y = event.clientY;
+    changeCursorOnMove(x, y);
+}
+
+const touchMoveEvent = (event) => {
+    const touch = event.touches[0];
+    const x = touch.clientX;
+    const y = touch.clientY;
+    changeCursorOnMove(x, y);
+}
+
 
 const changeCursorOnMove = (x, y) => {
     const cursorDiv = document.querySelector(".cursor");
