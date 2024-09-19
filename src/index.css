@@ -2,168 +2,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* root style */
 :root {
-    background-color: var(--bg-dark);
-    color: var(--primary-text-color);
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-    /* prevent text selection */
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-    /* color variables */
-    --bg-dark: #0C0C0C;
-    /* Text */
-    --text-dark: #0C0C0C;
-    --primary-text-color: #efefef;
-    --secondary-text-color: #d6d6d6;
-    --text-gray: #b5b5b5;
-    --text-blue: #6090e8;
-    /* --text-lightblue: #5356FF; */
-    /* Button */
-    --btn-dark-1: rgba(255, 255, 255, 0.1);
-    --btn-dark-2: rgba(255, 255, 255, 0.2);
-    --btn-dark-3: rgba(255, 255, 255, 0.3);
-    /* background */
-    --bg-dark-1: rgba(255, 255, 255, 0.1);
-    --bg-dark-2: rgba(255, 255, 255, 0.2);
-    --bg-dark-3: rgba(255, 255, 255, 0.3);
-    --bg-white: #efefef;
-    --bg-white-2: #dedede;
-    --bg-blue: #6090e8;
+  background-color: #0c0c0c;
+  color: #efefef;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  /* prevent text selection */
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-/* Footer */
-footer {
-    margin-top: 30px;
-    color: var(--text-gray);
-    padding: 0px 10px;
-}
+@layer base {
+  .button {
+    @apply text-primary bg-dark-1 border border-dark-2 px-4 py-2 rounded-xl font-semibold;
+  }
 
-.root-footer {
-    margin-left: 10px;
-}
+  .button:hover:not(:disabled) {
+    @apply text-dark bg-snow-white border border-dark-3;
+  }
 
-.socials {
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-}
+  .button:disabled {
+    @apply cursor-progress opacity-40;
+  }
 
-.socials>p {
-    margin-bottom: 10px;
-}
+  .tooltip {
+    @apply hidden text-[0.8rem];
+  }
 
-.social-links {
-    margin-left: 20px;
-}
+  .warning {
+    @apply text-[#d90429] opacity-100;
+  }
 
-.social-links>a {
-    text-decoration: none;
-    color: inherit;
-    font-size: 1.8rem;
-    margin-right: 10px;
-    transition: color 500ms ease-in-out;
-}
+  .spinner {
+    @apply border-4 rounded-full border-snow-white inline-block relative box-border;
+  }
 
-.social-links>a:hover {
-    color: #fff;
-}
+  .spinner::after,
+  .spinner::before {
+    @apply content-[''] absolute box-border -left-[8px] top-0 bg-blue size-[8px] rounded-full;
+  }
 
-/* Predefined css */
-.bold {
-    font-weight: 600;
-}
-
-.btn {
-    text-decoration: none;
-    color: var(--primary-text-color);
-    background-color: var(--btn-dark-1);
-    border: 1px solid var(--btn-dark-2);
-    padding: 15px 30px;
-    border-radius: 10px;
-    font-weight: 600;
-    transition-property: background-color, color;
-    transition-duration: 500ms;
-    transition-timing-function: ease-in-out;
-}
-
-.btn-pill {
-    border-radius: 50px;
-}
-
-.btn:hover:not(:disabled) {
-    color: var(--text-dark);
-    background-color: #fff;
-    border: 1px solid var(--btn-dark-3);
-}
-
-.btn:disabled {
-    cursor: default;
-    opacity: 0.5;
-}
-
-.back-btn-space {
-    margin: 30px 0px;
-}
-
-.warning {
-    color: #d90429 !important;
-    opacity: 1 !important;
-}
-
-.tooltip {
-    display: none;
-    font-size: 0.85rem;
-}
-
-.tooltip-parent:hover .tooltip {
-    display: block;
-    position: absolute;
-}
-
-/* Animations */
-.animation-ping {
-    animation: ping 2s infinite;
-    animation-timing-function: ease-in-out;
-}
-
-@keyframes ping {
-    0% {
-        opacity: 0.6;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0.6;
-    }
-}
-
-.animation-spin {
-    animation: spin 2s infinite;
-    animation-timing-function: linear;
-}
-
-.animation-spin-3s {
-    animation: spin 3s infinite;
-    animation-timing-function: linear;
-}
-
-.animation-spin-4s {
-    animation: spin 4s infinite;
-    animation-timing-function: linear;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
+  .spinner::before {
+    @apply left-auto top-auto -right-[8px] bottom-0;
+  }
 }

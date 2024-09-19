@@ -1,19 +1,21 @@
-import { Link } from 'react-router-dom'
-import NaElectrons from '../../components/shared/ui/NaElectrons/NaElectrons'
-import './Error404.css'
+import { Link } from 'react-router-dom';
+import NaElectrons from '../../components/shared/ui/NaElectrons/NaElectrons';
 
 const Error404 = () => {
-    return (
-        <div className='error-404-main-container'>
-            <div className='error-404-na-container'>
-                <NaElectrons />
-            </div>
-            <div className='error-container'>
-                <p className='error-text'>404 | Not Found</p>
-                <p>Go back to <Link to={'/'} className='error-home-link'>Home</Link></p>
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="flex h-lvh flex-col justify-center items-center">
+      <NaElectrons />
+      <div className="error-container">
+        <p className="font-bold text-[1.8rem]">404 | Not Found</p>
+        <p>
+          Go back to{' '}
+          <Link to={'/'} className="text-blue font-semibold">
+            Home
+          </Link>
+        </p>
+      </div>
+    </div>
+  );
+};
 
-export default Error404
+export default Error404;

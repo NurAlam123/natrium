@@ -1,60 +1,75 @@
-import { Link } from "react-router-dom";
-import CursorBlur from "../../components/shared/CursorBlur/CursorBlur";
-import GoBackButton from "../../components/shared/ui/GoBackButton/GoBackButton";
-import './About.css'
+import { Link } from 'react-router-dom';
+import CursorBlur from '../../components/shared/CursorBlur/CursorBlur';
+import GoBackButton from '../../components/shared/ui/GoBackButton/GoBackButton';
 
 const About = () => {
-    return (
-        <section className="about-page">
-            <CursorBlur />
-            <div style={{
-                marginBottom: '30px',
-            }}>
-                <GoBackButton />
+  return (
+    <>
+      <CursorBlur />
+      <section className="mx-4 my-2">
+        <GoBackButton />
+        <div className="flex justify-center items-center">
+          <div className="space-y-4">
+            <div>
+              {/* Greetings */}
+              <div>
+                <h1 className="text-[2.5rem] md:text-[4.2rem] font-bold">
+                  Hi,
+                </h1>
+                <h2 className="text-[1.5rem]">
+                  I am{' '}
+                  <span className="text-blue font-semibold">
+                    Nur Alam<span className="animate-ping">.</span>
+                  </span>
+                </h2>
+                <p className="text-gray text-sm mb-4">
+                  {/* A Web Developer */}- Currently learning{' '}
+                  <strong>Web Development</strong>
+                </p>
+              </div>
+              {/* Description */}
+              <div className="max-w-[550px] mb-6 space-y-2">
+                <p className="text-secondary">
+                  I also have interest in ML/AI, CP, Discord Bot Development,
+                  Game Development etc. Didn&apos;t explore that much on these
+                  thing except Discord Bot Development.
+                </p>
+                <p>
+                  <strong>
+                    And don&apos;t have any work experiences till now.
+                  </strong>
+                </p>
+              </div>
+              {/* Skills */}
+              <div>
+                <h2 className="text-xl text-gray font-semibold mb-2">Skills</h2>
+                <ul className="list-disc ml-10 mb-2">
+                  <li className="list-item">Javascript</li>
+                  <li className="list-item">React</li>
+                  {/* <li>Nodejs</li> */}
+                  <li className="list-item">Tailwind CSS</li>
+                  <li className="list-item">Python</li>
+                </ul>
+                <p>and a little bit of C, C++</p>
+              </div>
             </div>
-            <section className="about-container">
-                <div className="about">
-                    <h1 className="about-h1">Hi,</h1>
-                    <h2 className="about-h2">
-                        I am <span className="about-name bold">Nur Alam<span className="animation-ping">.</span></span>
-                    </h2>
-                    <p className="about-me">
-                        {/* A Web Developer */}
-                        - Currently learning <strong>Web Development</strong>
-                    </p>
-                    <p className="about-description">
-                        I also have interest in ML/AI, CP, Discord Bot Development, Game Development etc.<br />
-                        Didn&apos;t explored that much on these thing expect Discord Bot Development. <br />
-                        <strong>And don&apos;t have any work experiences till now.</strong>
-                    </p>
-                    <div className="skill-container">
-                        <h2>Skills</h2>
-                        <ul>
-                            <li>Python</li>
-                            <li>Javascript</li>
-                            <li>React</li>
-                            {/* <li>Nodejs</li> */}
-                            <li>Tailwind</li>
-                        </ul>
-                        <p>and a little bit of C, C++</p>
-                    </div>
-                </div>
-                <div className="about-btn-container">
-                    <div className="about-btn-group">
-                        <div>
-                            <Link to={'/resume'} className="btn btn-pill about-btn-link">Resume</Link>
-                        </div>
-                        <div>
-                            <Link to={'/projects'} className="btn btn-pill about-btn-link">Projects</Link>
-                        </div>
-                        <div>
-                            <Link to={'/contact'} className="btn btn-pill about-btn-link">Contact Me</Link>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </section>
-    )
-}
+            {/* Pages */}
+            <div className="flex flex-wrap gap-2">
+              <Link to={'/resume'} className="button rounded-full">
+                Resume
+              </Link>
+              <Link to={'/projects'} className="button rounded-full">
+                Projects
+              </Link>
+              <Link to={'/contact'} className="button rounded-full">
+                Contact Me
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
 
-export default About
+export default About;

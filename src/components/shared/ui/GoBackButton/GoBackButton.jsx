@@ -1,18 +1,19 @@
-import { FaArrowLeft } from "react-icons/fa"
-import { useNavigate } from "react-router-dom";
-import './GoBackButton.css';
-
+import { FaArrowLeft } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const GoBackButton = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    return (
-        <div>
-            <div className="go-back-button-btn" onClick={() => navigate(-1)}>
-                <FaArrowLeft />
-            </div>
-        </div>
-    )
-}
+  return (
+    <div>
+      <div
+        className="button inline-block mb-2 cursor-pointer"
+        onClick={() => navigate(-1)}
+      >
+        <FaArrowLeft />
+      </div>
+    </div>
+  );
+};
 
-export default GoBackButton
+export default GoBackButton;
