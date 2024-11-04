@@ -46,6 +46,14 @@
   .spinner::before {
     @apply left-auto top-auto -right-[8px] bottom-0;
   }
+
+  .shell {
+    @apply absolute border border-snow-white rounded-full;
+  }
+
+  .electron {
+    @apply size-5 rounded-full bg-snow-white -translate-x-1/2 -translate-y-1/2;
+  }
 }
 
 /* Style the box under mouse cursor  */
