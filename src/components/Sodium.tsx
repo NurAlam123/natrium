@@ -1,10 +1,13 @@
 "use client";
 
+import clsx from "clsx";
 import { motion } from "framer-motion";
 
-const Sodium = () => {
+const Sodium = ({ className }: { className?: string }) => {
   return (
-    <div className="flex items-center justify-center absolute">
+    <div
+      className={clsx("flex items-center justify-center absolute", className)}
+    >
       <div className="w-20 h-20 bg-white/20 rounded-full flex justify-center items-center">
         <span className="font-semibold">Na</span>
       </div>

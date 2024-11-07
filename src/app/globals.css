@@ -7,6 +7,7 @@
 :root {
   background-color: #0c0c0c;
   color: #efefef;
+  scroll-behavior: smooth;
   /* prevent text selection */
   /*-webkit-user-select: none;*/
   /*-ms-user-select: none;*/

@@ -45,7 +45,10 @@ const Contact = () => {
   const [state, formAction, isPending] = useActionState(handleSendBtn, false);
 
   return (
-    <section className="flex justify-center items-center mb-8 mt-4" id="contact">
+    <section
+      className="flex justify-center items-center mb-8 mt-4"
+      id="contact"
+    >
       <div>
         <div>
           {/* Contact Links */}
