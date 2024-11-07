@@ -1,3 +1,5 @@
+"use server";
+
 const webhookUrl = process.env.WEBHOOK_URL || "";
 const ownerID = process.env.OWNER_ID || "";
 

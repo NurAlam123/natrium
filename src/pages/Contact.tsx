@@ -2,48 +2,56 @@
 
 import LoadingSpinner from "@/components/LoadingSpinner";
 import sendMessage from "@/utils/discord-webhook";
-import { useState } from "react";
+import clsx from "clsx";
+import { useActionState, useState } from "react";
 import toast from "react-hot-toast";
-//import { toast } from 'react-toastify';
-import { FaDiscord, FaEnvelope, FaFacebook, FaLinkedin } from "react-icons/fa";
+import { FaDiscord, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaBluesky, FaThreads, FaXTwitter } from "react-icons/fa6";
 
 const Contact = () => {
   const [characters, setCharacters] = useState(0);
   const [overLimit, setOverLimit] = useState(false);
   const [disableButton, setDisableButton] = useState(true);
-  const [loading, setLoading] = useState(false);
+  const [userMessage, setUserMessage] = useState("");
   const charactersLimit = 999;
 
-  const countCharacters = (event) => {
+  const countCharacters = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const textLength = event.target.value.length;
-    textLength > 0 ? setDisableButton(false) : setDisableButton(true);
+    if (textLength > 0) setDisableButton(false);
+    else setDisableButton(true);
+
     if (textLength >= charactersLimit - 20) setOverLimit(true);
     else setOverLimit(false);
+
     setCharacters(textLength);
   };
 
-  const sendBtn = async () => {
-    const message_area = document.querySelector("#message");
-    const message = message_area.value;
-    setLoading(true);
+  const handleSendBtn = async (prevState: object, formData: FormData) => {
     setDisableButton(true);
+    const message = formData.get("message") as string;
+    setUserMessage(message);
+
     const send = await sendMessage(message);
     if (send) {
-      toast("Your message successfully delivered. 😃");
+      toast.success("Your message successfully delivered. 😃");
+      setUserMessage("");
+      setCharacters(0);
     } else {
       toast.error("Oops... Couldn't deliver your message. Sorry! Try again 😞");
+      setDisableButton(false);
     }
-    setLoading(false);
-    setDisableButton(false);
   };
+
+  const [state, formAction, isPending] = useActionState(handleSendBtn, false);
+
   return (
-    <section className="h-screen flex justify-center items-center" id="contact">
+    <section className="flex justify-center items-center mb-8 mt-4" id="contact">
       <div>
         <div>
           {/* Contact Links */}
           <div className="mb-6">
             <h2 className="text-2xl font-semibold mb-2">Contact</h2>
-            <div className="flex gap-2 text-[2.5rem] items-center text-secondary">
+            <div className="flex gap-2 text-[2.3rem] items-center text-secondary">
               <a
                 href="mailto:nuralam.rsc@gmail.com"
                 target="_blank"
@@ -54,6 +62,18 @@ const Contact = () => {
                 </div>
                 <span className="tooltip group-hover:inline-block group-hover:absolute">
                   Email
+                </span>
+              </a>
+              <a
+                className="group"
+                href="https://github.com/NurAlam123"
+                target="_blank"
+              >
+                <div className="hover:blur-sm">
+                  <FaGithub />
+                </div>
+                <span className="tooltip group-hover:inline-block group-hover:absolute">
+                  Github
                 </span>
               </a>
               <a
@@ -69,23 +89,8 @@ const Contact = () => {
                 </span>
               </a>
               <a
-                className="group"
-                href="https://www.facebook.com/nur.0.alam"
-                target="_blank"
-              >
-                <div className="hover:blur-sm">
-                  <FaFacebook />
-                </div>
-                <span className="tooltip group-hover:inline-block group-hover:absolute">
-                  Facebook
-                </span>
-              </a>
-              <a
                 className="group cursor-pointer"
-                onClick={() => {
-                  window.navigator.clipboard.writeText("Nur Alam#9289");
-                  toast("Discord username copied.");
-                }}
+                href="https://discord.com/users/838836138537648149"
               >
                 <div className="hover:blur-sm">
                   <FaDiscord />
@@ -94,36 +99,79 @@ const Contact = () => {
                   Discord
                 </span>
               </a>
+              <a
+                className="group cursor-pointer"
+                href="https://x.com/nur_alam_404"
+              >
+                <div className="hover:blur-sm">
+                  <FaXTwitter />
+                </div>
+                <span className="tooltip group-hover:inline-block group-hover:absolute">
+                  X
+                </span>
+              </a>
+              <a
+                className="group cursor-pointer"
+                href="https://threads.net/@nur_alam_._"
+              >
+                <div className="hover:blur-sm">
+                  <FaThreads />
+                </div>
+                <span className="tooltip group-hover:inline-block group-hover:absolute">
+                  Threads
+                </span>
+              </a>
+              <a
+                className="group cursor-pointer"
+                href="https://bsky.app/profile/nuralam.bsky.social"
+              >
+                <div className="hover:blur-sm">
+                  <FaBluesky />
+                </div>
+                <span className="tooltip group-hover:inline-block group-hover:absolute">
+                  BlueSky
+                </span>
+              </a>
             </div>
           </div>
 
           {/* Anonymous message */}
           <div>
-            <p className="font-light mb-2">Want to send anonymous message?</p>
-            <div className="relative">
-              <textarea
-                id="message"
-                className="outline-none p-5 rounded-lg border-2 border-dark-3 bg-dark-1 text-gray h-[300px] resize-none focus:border-blue transition-colors duration-300"
-                placeholder="Write it down here..."
-                maxLength={charactersLimit}
-                onChange={(event) => countCharacters(event)}
-              ></textarea>
-              <p
-                className={`absolute bottom-[13px] right-[8px] text-[0.86rem] font-light ${
-                  overLimit ? "text-[#d90423]" : "text-gray opacity-[0.2]"
-                }`}
+            <p className="font-normal text-gray mb-2">
+              Want to send anonymous message?
+            </p>
+            <form action={formAction}>
+              <div className="relative">
+                <textarea
+                  id="message"
+                  name="message"
+                  className="outline-none p-5 rounded-lg border-2 border-dark-3 bg-dark-1 text-gray h-[300px] resize-none focus:border-blue transition-colors duration-300"
+                  placeholder="Write it down here..."
+                  defaultValue={userMessage}
+                  maxLength={charactersLimit}
+                  onChange={(event) => countCharacters(event)}
+                ></textarea>
+                <p
+                  className={`absolute bottom-[13px] right-[8px] text-[0.86rem] font-light ${
+                    overLimit ? "text-[#d90423]" : "text-gray opacity-[0.6]"
+                  }`}
+                >
+                  {characters}/{charactersLimit}
+                </p>
+              </div>
+              <button
+                className={clsx(
+                  "button rounded-full w-full mt-2",
+                  isPending
+                    ? "disabled:cursor-progress"
+                    : "disabled:cursor-not-allowed",
+                )}
+                type="submit"
+                disabled={disableButton || (isPending && true)}
               >
-                {characters}/{charactersLimit}
-              </p>
-            </div>
-            <button
-              className="button rounded-full w-full mt-2"
-              onClick={sendBtn}
-              type="button"
-              disabled={disableButton}
-            >
-              {loading ? <LoadingSpinner size={25} /> : "Send"}
-            </button>
+                {isPending ? <LoadingSpinner size={25} /> : "Send"}
+              </button>
+            </form>
           </div>
         </div>
       </div>
