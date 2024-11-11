@@ -6,7 +6,10 @@ import { motion } from "framer-motion";
 const Sodium = ({ className }: { className?: string }) => {
   return (
     <div
-      className={clsx("flex items-center justify-center absolute", className)}
+      className={clsx(
+        "flex items-center justify-center absolute -z-[999]",
+        className,
+      )}
     >
       <div className="w-20 h-20 bg-white/20 rounded-full flex justify-center items-center">
         <span className="font-semibold">Na</span>

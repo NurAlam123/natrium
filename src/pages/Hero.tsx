@@ -17,7 +17,7 @@ const Hero = () => {
             <p>Dhaka, Bangladesh</p>
           </div>
           <div className="relative">
-            <div className="opacity-20 absolute -top-20 -left-4">
+            <div className="opacity-20 absolute -top-20 -left-4 -z-[100]">
               <Sodium />
             </div>
             <p
