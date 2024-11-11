@@ -20,7 +20,6 @@ export type ProjectCardProps = {
 };
 
 // Project Card
-
 const ProjectCard = ({
   title,
   description,
@@ -30,7 +29,7 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <div className="sticky top-0 md:mb-24">
-      <div className="p-4 md:p-6  mt-4 md:mb-12 h-[500px] lg:h-[calc(100vh-24px)] bg-dark border border-dark-2 rounded-xl flex flex-col gap-4 max-w-screen-md mx-auto">
+      <div className="p-4 md:p-6  mt-4 md:mb-12 h-[500px] lg:h-[650px] bg-dark border border-dark-2 rounded-xl flex flex-col gap-4 max-w-screen-md mx-auto">
         <div>
           <Image
             src={image.src}

@@ -1,4 +1,5 @@
 import CursorBlur from "@/components/CursorBlur";
+import Navbar from "@/components/Navbar";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Hero from "@/pages/Hero";
@@ -9,9 +10,12 @@ export default function Home() {
     <>
       <CursorBlur />
       <Hero />
-      <About />
-      <Projects />
-      <Contact />
+      <div>
+        <Navbar />
+        <About />
+        <Projects />
+        <Contact />
+      </div>
     </>
   );
 }
