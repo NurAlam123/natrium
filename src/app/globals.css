@@ -20,7 +20,7 @@
   }
 
   .button:hover:not(:disabled) {
-    @apply text-dark bg-snow-white border border-dark-3;
+    @apply text-dark bg-primary border border-dark-3;
   }
 
   .button:disabled {
@@ -36,7 +36,7 @@
   }
 
   .spinner {
-    @apply border-4 rounded-full border-snow-white inline-block relative box-border;
+    @apply border-4 rounded-full border-primary inline-block relative box-border;
   }
 
   .spinner::after,
@@ -49,11 +49,11 @@
   }
 
   .shell {
-    @apply absolute border border-snow-white rounded-full;
+    @apply absolute border border-primary rounded-full;
   }
 
   .electron {
-    @apply size-5 rounded-full bg-snow-white -translate-x-1/2 -translate-y-1/2;
+    @apply size-5 rounded-full bg-primary -translate-x-1/2 -translate-y-1/2;
   }
 }
 
