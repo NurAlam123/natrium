@@ -1,4 +1,5 @@
 import { bebasNeue } from "@/app/fonts";
+import Navbar from "@/components/Navbar";
 import Sodium from "@/components/Sodium";
 import clsx from "clsx";
 import Link from "next/link";
@@ -30,25 +31,27 @@ const Hero = () => {
             </p>
           </div>
         </div>
-        <div className="md:text-[1.3rem] space-x-4 text-primary">
-          <Link href="#about" className="hover:text-blue group space-x-1">
-            <span className="text-blue invisible group-hover:visible transition-[visibility] duration-100 ease-in-out">
-              &gt;
-            </span>
-            <span>About</span>
-          </Link>
-          <Link href="#projects" className="hover:text-blue group space-x-1">
-            <span className="text-blue invisible group-hover:visible transition-[visibility] duration-100 ease-in-out">
-              &gt;
-            </span>
-            <span>Projects</span>
-          </Link>
-          <Link href="#contact" className="hover:text-blue group space-x-1">
-            <span className="text-blue invisible group-hover:visible transition-[visibility] duration-100 ease-in-out">
-              &gt;
-            </span>
-            <span>Contact</span>
-          </Link>
+        <div className="space-y-4">
+          <div className="md:text-[1.3rem] space-x-4 text-primary">
+            <Link href="#about" className="hover:text-blue group space-x-1">
+              <span className="text-blue invisible group-hover:visible transition-[visibility] duration-100 ease-in-out">
+                &gt;
+              </span>
+              <span>About</span>
+            </Link>
+            <Link href="#projects" className="hover:text-blue group space-x-1">
+              <span className="text-blue invisible group-hover:visible transition-[visibility] duration-100 ease-in-out">
+                &gt;
+              </span>
+              <span>Projects</span>
+            </Link>
+            <Link href="#contact" className="hover:text-blue group space-x-1">
+              <span className="text-blue invisible group-hover:visible transition-[visibility] duration-100 ease-in-out">
+                &gt;
+              </span>
+              <span>Contact</span>
+            </Link>
+          </div>
         </div>
       </div>
       <div className="text-white/70 tracking-widest font-thin uppercase absolute left-0 bottom-16 mx-5">

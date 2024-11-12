@@ -29,7 +29,10 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <div className="sticky top-0 md:mb-24">
-      <div className="p-4 md:p-6  mt-4 md:mb-12 h-[500px] lg:h-[650px] bg-dark border border-dark-2 rounded-xl flex flex-col gap-4 max-w-screen-md mx-auto">
+      <div className="p-4 md:p-6  mt-4 md:mb-12 h-[680px] bg-dark border border-dark-2 rounded-xl flex flex-col gap-4 max-w-screen-md mx-auto">
+        <div>
+          <h4 className="text-2xl font-medium mb-2 text-primary">{title}</h4>
+        </div>
         <div>
           <Image
             src={image.src}
@@ -40,7 +43,6 @@ const ProjectCard = ({
           />
         </div>
         <div>
-          <h4 className="text-xl font-medium mb-2 text-primary">{title}</h4>
           <p className="text-sm text-gray max-w-xl">{description}</p>
           <div className="flex gap-3 text-xs mt-4 flex-auto flex-wrap">
             {techs.map((tech) => (

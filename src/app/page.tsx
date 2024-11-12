@@ -10,11 +10,13 @@ export default function Home() {
     <>
       <CursorBlur />
       <Hero />
-      <div>
+      <div className="relative">
         <Navbar />
-        <About />
-        <Projects />
-        <Contact />
+        <div>
+          <About />
+          <Projects />
+          <Contact />
+        </div>
       </div>
     </>
   );
