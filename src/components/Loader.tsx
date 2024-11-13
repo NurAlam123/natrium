@@ -14,9 +14,9 @@ const LoadingScreen = () => {
     exit: {
       top: "-100dvh",
       transition: {
-        duration: 12,
+        duration: 18,
         ease: "easeOut",
-        delay: 0.6,
+        delay: 3,
       },
     },
   };
@@ -31,7 +31,6 @@ const LoadingScreen = () => {
       <video
         muted={mute}
         autoPlay
-        loop
         className="rounded-xl aspect-video object-cover opacity-55 size-full"
       >
         <source src="/20th_fox_century_intro.mp4" />
@@ -53,7 +52,7 @@ const Loader = () => {
     (async () => {
       setTimeout(() => {
         setIsLoading(false);
-      }, 12000);
+      }, 18000);
     })();
   });
 
