@@ -1,4 +1,5 @@
 import { bebasNeue } from "@/app/fonts";
+import { TextDoubleBounce } from "@/components/animation/text";
 import Loader from "@/components/Loader";
 import Sodium from "@/components/Sodium";
 import clsx from "clsx";
@@ -22,14 +23,14 @@ const Hero = () => {
             <div className="opacity-20 absolute -top-20 -left-4 -z-[100]">
               <Sodium />
             </div>
-            <p
+            <div
               className={clsx(
                 bebasNeue.className,
                 "font-semibold not-italic text-[5rem] md:text-[14rem] tracking-normal text-secondary leading-tight",
               )}
             >
-              Nur Alam
-            </p>
+              <TextDoubleBounce>Nur Alam</TextDoubleBounce>
+            </div>
           </div>
         </div>
         <div className="space-y-4">

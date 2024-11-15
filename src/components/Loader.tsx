@@ -12,11 +12,11 @@ const LoadingScreen = () => {
       top: 0,
     },
     exit: {
-      top: "-100dvh",
+      left: "100%",
+      scale: 0,
       transition: {
-        duration: 18,
-        ease: "easeOut",
-        delay: 3,
+        delay: 8,
+        ease: "easeOut"
       },
     },
   };
