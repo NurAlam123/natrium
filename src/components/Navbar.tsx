@@ -30,11 +30,14 @@ const Navbar = () => {
       }}
       animate={isHidden ? "hidden" : "visible"}
       transition={{
-        duration: 0.2
+        duration: 0.2,
       }}
     >
       <motion.nav className="bg-dark border-dark-2 border p-4 text-sm z-10 *:text-primary *:border *:border-dark-1 *:bg-dark-1 *:px-4 *:py-2 *:rounded-2xl rounded-xl flex flex-col gap-2">
-        <Link href="/" className="hover:bg-dark/20 hover:border hover:border-dark-2">
+        <Link
+          href="/"
+          className="hover:bg-dark/20 hover:border hover:border-dark-2"
+        >
           Home
         </Link>
         <Link href="#about" className="hover:bg-dark/20">

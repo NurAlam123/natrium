@@ -24,6 +24,20 @@ export const database = ["MongoDB"];
 
 export const projects: Array<ProjectCardProps> = [
   {
+    title: "CerebroMesh Labs",
+    description:
+      "CerebroMesh Labs is a Next.js based landing page which provides high-quality curated datasets to enhance your AI.",
+    image: {
+      src: "/projects/cerebromesh_labs.png",
+      alt: "CerebroMesh Labs",
+    },
+    techs: ["Next.js", "Tailwnd CSS"],
+    links: {
+      github: "",
+      live: "https://cerebromesh-labs-ten.vercel.app/",
+    },
+  },
+  {
     title: "Natala",
     description:
       "Natala, a modern responsive saas landing page built with Next.js, Tailwind CSS, Framer Motion. This project showcases a sleek design with smooth animations and a mobile-first approach.",
