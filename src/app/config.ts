@@ -7,7 +7,7 @@ export const meta = {
   site: {
     title: "Nur Alam",
     description:
-      "Hi! I am Nur. I am a Frontend Developer lives in Dhaka, Bangladesh. I love to create creative, snoothing websites.",
+      "Hi! I am Nur, a Frontend Developer living in Dhaka, Bangladesh. I love creating creative, soothing websites",
     bannerImage: "/natrium.png",
     url: "https://nuralam.vercel.app",
     keywords: ["web development", "portfolio", "nur alam", "natrium"],
