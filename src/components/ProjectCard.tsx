@@ -29,7 +29,7 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <div className="sticky top-0 md:mb-24">
-      <div className="p-4 md:p-6  mt-4 md:mb-12 h-[680px] bg-dark border border-dark-2 rounded-xl flex flex-col gap-4 max-w-screen-md mx-auto">
+      <div className="p-4 md:p-6 mt-4 md:mb-12 h-[680px] bg-dark border border-dark-2 rounded-xl flex flex-col gap-4 max-w-screen-md mx-auto">
         <div>
           <h4 className="text-2xl font-medium mb-2 text-primary">{title}</h4>
         </div>
@@ -59,6 +59,7 @@ const ProjectCard = ({
           {links.github && (
             <a
               href={links.github}
+              target="_blank"
               className="text-gray hover:text-blue/70 transition"
             >
               <FaGithub />
@@ -66,6 +67,7 @@ const ProjectCard = ({
           )}
           {links.live && (
             <a
+              target="_blank"
               href={links.live}
               className="text-gray hover:text-blue/70 transition"
             >
