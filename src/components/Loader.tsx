@@ -3,10 +3,13 @@
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
+import Sodium from "./Sodium";
 
+const DELAY = 3;
+const DURATION = 10;
+
+// 20th century fox intro screen
 const LoadingScreen = () => {
-  const [mute, setMute] = useState(true);
-
   const loadingAnimation: Variants = {
     initial: {
       top: 0,
@@ -15,11 +18,13 @@ const LoadingScreen = () => {
       left: "100%",
       scale: 0,
       transition: {
-        delay: 8,
-        ease: "easeOut"
+        delay: DELAY,
+        duration: DURATION,
+        ease: "easeOut",
       },
     },
   };
+  const [mute, setMute] = useState(true);
 
   return (
     <motion.div
@@ -45,6 +50,47 @@ const LoadingScreen = () => {
   );
 };
 
+// Sodium Electorn Spinning Screen
+const SodiumLoadingScreen = () => {
+  return (
+    <motion.div
+      exit={{
+        scale: 0,
+        left: "100%",
+        transition: {
+          delay: DELAY,
+          ease: "easeOut",
+        },
+      }}
+      className="bg-dark overflow-hidden fixed left-0 top-0 h-dvh w-dvw cursor-wait flex flex-col gap-2 z-20 "
+    >
+      <motion.div className="opacity-25">
+        <Sodium className="scale-[4] md:scale-[10]" />
+      </motion.div>
+    </motion.div>
+  );
+};
+
+// 20th century
+export const V1Loader = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, DELAY * 1000);
+    })();
+  });
+
+  return (
+    <AnimatePresence mode="wait">
+      {isLoading && <LoadingScreen />}
+    </AnimatePresence>
+  );
+};
+
+// Main Loading Screen
 const Loader = () => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -52,13 +98,13 @@ const Loader = () => {
     (async () => {
       setTimeout(() => {
         setIsLoading(false);
-      }, 18000);
+      }, DELAY * 1000);
     })();
   });
 
   return (
     <AnimatePresence mode="wait">
-      {isLoading && <LoadingScreen />}
+      {isLoading && <SodiumLoadingScreen />}
     </AnimatePresence>
   );
 };

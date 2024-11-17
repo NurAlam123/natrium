@@ -46,7 +46,7 @@ const Contact = () => {
 
   return (
     <section
-      className="flex justify-center items-center mb-8 mt-4"
+      className="flex justify-center items-center relative mb-8 mt-4"
       id="contact"
     >
       <div>

@@ -48,7 +48,7 @@ export const projects: Array<ProjectCardProps> = [
     techs: ["Next.js", "Tailwnd CSS", "Framer Motion"],
     links: {
       github: "https://github.com/nuralam123/Cogni",
-      live: "https://congi-tau.vercel.app/",
+      live: "https://cogni-tau.vercel.app/",
     },
   },
   {
