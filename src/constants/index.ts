@@ -24,6 +24,20 @@ export const database = ["MongoDB"];
 
 export const projects: Array<ProjectCardProps> = [
   {
+    title: "Bento Profile",
+    description:
+      "This is my own bento grid portfolio made with Next.js, Tailwnd CSS, Framer Moiton.",
+    image: {
+      src: "/projects/bento.png",
+      alt: "Bento Profile",
+    },
+    techs: ["Next.js", "Tailwnd CSS", "Framer Motion"],
+    links: {
+      github: "https://github.com/NurAlam123/bento",
+      live: "https://lightento.vercel.app/",
+    },
+  },
+  {
     title: "CerebroMesh Labs",
     description:
       "CerebroMesh Labs is a Next.js based landing page which provides high-quality curated datasets to enhance your AI.",
@@ -77,6 +91,20 @@ export const projects: Array<ProjectCardProps> = [
     links: {
       github: "https://github.com/nuralam123/yc-directory",
       live: "https://yc-directory-rho.vercel.app/",
+    },
+  },
+  {
+    title: "Sodium UI",
+    description:
+      "Sodium UI is a random collection of UI elements that I found interesting on various websites or other online media platforms. I tried recreating them myself as practice.",
+    image: {
+      src: "/projects/sodium_ui.png",
+      alt: "Sodium UI",
+    },
+    techs: ["Next.js", "Tailwnd CSS", "Framer Moiton"],
+    links: {
+      github: "https://github.com/nuralam123/sodium-ui",
+      live: "https://sodium-ui.vercel.app/",
     },
   },
 ];
