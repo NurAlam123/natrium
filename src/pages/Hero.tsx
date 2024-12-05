@@ -1,5 +1,4 @@
 import { bebasNeue } from "@/app/fonts";
-import { TextDoubleBounce } from "@/components/animation/text";
 import Loader from "@/components/Loader";
 import Sodium from "@/components/Sodium";
 import clsx from "clsx";
@@ -29,7 +28,7 @@ const Hero = () => {
                 "font-semibold not-italic text-[5rem] md:text-[14rem] tracking-normal text-secondary leading-tight",
               )}
             >
-              <TextDoubleBounce>Nur Alam</TextDoubleBounce>
+              Nur Alam
             </div>
           </div>
         </div>
