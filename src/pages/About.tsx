@@ -25,9 +25,28 @@ const About = () => {
           {/* Description */}
           <div className="max-w-[550px] mb-6 space-y-2 mx-auto">
             <p className="text-secondary">
-              I also have interest in ML/AI, CP, Discord Bot Development, Game
-              Development etc. Didn&apos;t explore that much on these thing
-              except Discord Bot Development.
+              I love building clean, responsive, and interactive websites using
+              modern frontend technologies.
+            </p>
+            <p>
+              I am also interested in AI/ML, Bot Development, and Competitive
+              Programming. I created a private Discord bot &quot;Fibu&quot; by
+              Python in 2020 for my &quot;Hero Programmers&quot; Discord server
+              and another bot &quot;Maria&quot; as its companion. I also
+              practiced and joined some CP contests on Codeforces.
+            </p>
+            <p>
+              When I am not coding, I am probably sketching some random things
+              or creating pixel art, reading manga, exploring random animated
+              movies, anime, or other movies.
+            </p>
+            <p>
+              Got an idea? OH GREAT!! Let&apos;s make it happen - Shoot me a
+              message at{" "}
+              <span className="font-bold underline underline-offset-4">
+                nuralam.rsc@gmail.com
+              </span>
+              .
             </p>
             {/*
               <p>
