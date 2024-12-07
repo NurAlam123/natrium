@@ -1,5 +1,4 @@
 import { bebasNeue } from "@/app/fonts";
-import Loader from "@/components/Loader";
 import Sodium from "@/components/Sodium";
 import clsx from "clsx";
 import Link from "next/link";
@@ -9,7 +8,6 @@ import { FaLocationArrow } from "react-icons/fa6";
 const Hero = () => {
   return (
     <section className="flex h-svh max-h:[280px] relative justify-center items-center">
-      <Loader />
       <div>
         <div>
           <div className="text-gray flex items-center gap-2">
