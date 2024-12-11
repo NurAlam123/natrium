@@ -3,8 +3,7 @@
 import Image from "next/image";
 import { FaGithub, FaLink } from "react-icons/fa6";
 
-import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion, MotionValue, useTransform } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 

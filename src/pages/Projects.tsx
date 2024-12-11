@@ -3,7 +3,7 @@
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/constants";
 
-import { motion, useScroll } from "framer-motion";
+import { useScroll } from "framer-motion";
 import { useRef } from "react";
 
 const Projects = () => {
@@ -13,8 +13,6 @@ const Projects = () => {
     target: containerRef,
     offset: ["start start", "end end"],
   });
-
-  //const scale = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
     <section id="projects" className="mx-4 py-10">

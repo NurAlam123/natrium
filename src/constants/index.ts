@@ -22,7 +22,12 @@ export const tools = ["Git", "GitHub", "Figma"];
 
 export const database = ["MongoDB"];
 
-export const projects: Array<ProjectCardProps> = [
+type ProjectCardType = Omit<
+  ProjectCardProps,
+  "progress" | "index" | "targetScale" | "range"
+>;
+
+export const projects: Array<ProjectCardType> = [
   {
     title: "Bento Profile",
     description:
