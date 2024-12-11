@@ -28,7 +28,7 @@ export const projects: Array<ProjectCardProps> = [
     description:
       "This is my own bento grid portfolio made with Next.js, Tailwnd CSS, Framer Moiton.",
     image: {
-      src: "/projects/bento.png",
+      src: "/projects/bento.webp",
       alt: "Bento Profile",
     },
     techs: ["Next.js", "Tailwnd CSS", "Framer Motion"],
@@ -42,7 +42,7 @@ export const projects: Array<ProjectCardProps> = [
     description:
       "CerebroMesh Labs is a Next.js based landing page which provides high-quality curated datasets to enhance your AI.",
     image: {
-      src: "/projects/cerebromesh_labs.png",
+      src: "/projects/cerebromesh_labs.webp",
       alt: "CerebroMesh Labs",
     },
     techs: ["Next.js", "Tailwnd CSS"],
@@ -56,7 +56,7 @@ export const projects: Array<ProjectCardProps> = [
     description:
       "Natala, a modern responsive saas landing page built with Next.js, Tailwind CSS, Framer Motion. This project showcases a sleek design with smooth animations and a mobile-first approach.",
     image: {
-      src: "/projects/natala.png",
+      src: "/projects/natala.webp",
       alt: "Natala",
     },
     techs: ["Next.js", "Tailwnd CSS", "Framer Motion"],
@@ -70,7 +70,7 @@ export const projects: Array<ProjectCardProps> = [
     description:
       "Congi is an AI landing page with sleek design and animaiton. Made with Next.js, Tailwind CSS, Framer Motion",
     image: {
-      src: "/projects/cogni.png",
+      src: "/projects/cogni.webp",
       alt: "Congi",
     },
     techs: ["Next.js", "Tailwnd CSS", "Framer Motion"],
@@ -84,7 +84,7 @@ export const projects: Array<ProjectCardProps> = [
     description:
       "A modern Full Stack app for the new era for startups. Submit your ideas, vote on pitches and get noticed in virtual competition. Pitch, Vote, Grow",
     image: {
-      src: "/projects/yc-directory.png",
+      src: "/projects/yc-directory.webp",
       alt: "YC Directory",
     },
     techs: ["Next.js", "Shadcn", "Sanity", "Tailwnd CSS", "React.js"],
@@ -98,7 +98,7 @@ export const projects: Array<ProjectCardProps> = [
     description:
       "Sodium UI is a random collection of UI elements that I found interesting on various websites or other online media platforms. I tried recreating them myself as practice.",
     image: {
-      src: "/projects/sodium_ui.png",
+      src: "/projects/sodium_ui.webp",
       alt: "Sodium UI",
     },
     techs: ["Next.js", "Tailwnd CSS", "Framer Moiton"],

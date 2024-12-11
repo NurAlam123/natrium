@@ -1,22 +1,40 @@
+"use client";
+
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/constants";
 
+import { motion, useScroll } from "framer-motion";
+import { useRef } from "react";
+
 const Projects = () => {
+  const containerRef = useRef<HTMLElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
+
+  //const scale = useTransform(scrollYProgress, [0, 1], [1, 0]);
+
   return (
-    <section id="projects" className="mx-4 my-10">
+    <section id="projects" className="mx-4 py-10">
       <div className="max-w-screen-md mx-auto">
         <h1 className="text-2xl md:text-[2.5rem] font-semibold mb-6">
           Projects
         </h1>
         <div className="p-2 flex gap-12 flex-col">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <ProjectCard
               key={project.title}
+              index={index}
               title={project.title}
               description={project.description}
               image={project.image}
               links={project.links}
               techs={project.techs}
+              range={[index * (projects.length / 100), 1]}
+              targetScale={1 - (projects.length - index) * 0.04}
+              progress={scrollYProgress}
             />
           ))}
         </div>
