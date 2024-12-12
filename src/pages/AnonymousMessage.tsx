@@ -1,7 +1,7 @@
 "use client";
 
 import LoadingSpinner from "@/components/LoadingSpinner";
-import sendMessage from "@/utils/discord-webhook";
+import sendMessage from "@/lib/utils/discord-webhook";
 import clsx from "clsx";
 import { useActionState, useState } from "react";
 import toast from "react-hot-toast";
