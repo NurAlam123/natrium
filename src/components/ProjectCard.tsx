@@ -49,7 +49,7 @@ const ProjectCard = ({
         scale,
         top: `calc(10% + ${index * 20}px)`,
       }}
-      className="sticky mb-2"
+      className="sticky mb-2 h-svh"
     >
       <div className="p-4 md:p-8 mt-4 h-[424px] md:h-[640px] bg-dark border border-dark-2 rounded-xl flex gap-4 max-w-screen-md mx-auto">
         <div className="w-8">
