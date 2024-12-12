@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ["var(--font-poppins)"],
+        "bebas-neue": ["var(--font-bebas-neue)"],
+      },
       colors: {
         dark: "#0c0c0c",
         primary: "#efefef",

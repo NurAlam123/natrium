@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { poppins } from "./fonts";
+import { bebasNeue, poppins } from "./fonts";
 import { Toaster } from "react-hot-toast";
 import { meta } from "./config";
 
 export const metadata: Metadata = {
   metadataBase: new URL(meta.site.url),
-  title: {default: meta.site.title, template: `%s | ${meta.site.title}`},
+  title: { default: meta.site.title, template: `%s | ${meta.site.title}` },
   description: meta.site.description,
   robots: {
     index: true,
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
       follow: true,
       "max-video-preview": -1,
       "max-image-preview": "large",
-      "max-snippet": -1
-    }
+      "max-snippet": -1,
+    },
   },
   twitter: {
     card: "summary_large_image",
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
         url: meta.site.bannerImage,
         width: 1280,
         height: 720,
-        alt: meta.site.description
-      }
-    ]
+        alt: meta.site.description,
+      },
+    ],
   },
   keywords: meta.site.keywords,
   creator: meta.author.username,
@@ -45,11 +45,10 @@ export const metadata: Metadata = {
         url: meta.site.bannerImage,
         width: 1280,
         height: 720,
-        alt: meta.site.description
-      }
-    ]
-  }
-
+        alt: meta.site.description,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -59,9 +58,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased`}>
-        {children}
-        <Toaster position="top-center" reverseOrder={false} />
+      <body
+        className={`${poppins.variable} ${bebasNeue.variable} font-poppins antialiased`}
+      >
+        <main className="max-w-screen-xl mx-auto relative">
+          {children}
+          <Toaster position="top-center" reverseOrder={false} />
+        </main>
       </body>
     </html>
   );

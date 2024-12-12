@@ -20,12 +20,7 @@ const Hero = () => {
             <div className="opacity-20 absolute -top-20 -left-4 -z-[100]">
               <Sodium />
             </div>
-            <div
-              className={clsx(
-                bebasNeue.className,
-                "font-semibold not-italic text-[5rem] md:text-[14rem] tracking-normal text-secondary leading-tight",
-              )}
-            >
+            <div className="font-bebas-neue font-semibold not-italic text-[4rem] md:text-[12rem] tracking-wider text-secondary leading-tight">
               Nur Alam
             </div>
           </div>
