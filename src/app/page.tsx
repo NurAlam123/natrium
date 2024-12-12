@@ -9,11 +9,29 @@ import Footer from "@/pages/Footer";
 import Hero from "@/pages/Hero";
 import Projects from "@/pages/Projects";
 
-import { motion } from "framer-motion";
-import { useRef } from "react";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { useRef, useState } from "react";
 
 export default function Home() {
   const parentRef = useRef<HTMLDivElement>(null);
+
+  const [show, setShow] = useState(false);
+
+  const { scrollYProgress } = useScroll({
+    target: parentRef,
+    offset: ["start start", "end end"],
+  });
+
+  useMotionValueEvent(scrollYProgress, "change", (progress: number) => {
+    if (progress > 0 && progress < 1 && !show) {
+      setShow(true);
+      return;
+    }
+    if (progress <= 0 || (progress >= 1 && show)) {
+      setShow(false);
+      return;
+    }
+  });
 
   return (
     <>
@@ -34,8 +52,8 @@ export default function Home() {
         }}
       >
         <Hero />
-        <div ref={parentRef} className="relative">
-          <Navbar parentRef={parentRef} />
+        <div ref={parentRef} className="relative border">
+          <Navbar show={show} />
           <div>
             <About />
             <Projects />
