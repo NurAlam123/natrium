@@ -2,7 +2,7 @@
 
 import { contacts } from "@/constants";
 import { motion, useScroll } from "framer-motion";
-import { ArrowUpLeft, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { useRef } from "react";
 
@@ -15,6 +15,7 @@ const Contact = () => {
 
   return (
     <motion.section
+      id="contact"
       ref={containerRef}
       className="flex justify-center items-center relative mx-4 h-svh"
       style={{

@@ -10,8 +10,11 @@ import Hero from "@/pages/Hero";
 import Projects from "@/pages/Projects";
 
 import { motion } from "framer-motion";
+import { useRef } from "react";
 
 export default function Home() {
+  const parentRef = useRef<HTMLDivElement>(null);
+
   return (
     <>
       <CursorBlur />
@@ -31,8 +34,8 @@ export default function Home() {
         }}
       >
         <Hero />
-        <div className="relative">
-          <Navbar />
+        <div ref={parentRef} className="relative">
+          <Navbar parentRef={parentRef} />
           <div>
             <About />
             <Projects />

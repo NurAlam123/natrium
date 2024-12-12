@@ -1,6 +1,5 @@
-import { bebasNeue } from "@/app/fonts";
 import Sodium from "@/components/Sodium";
-import clsx from "clsx";
+import { navigation } from "@/constants";
 import Link from "next/link";
 import { FaArrowDown } from "react-icons/fa";
 import { FaLocationArrow } from "react-icons/fa6";
@@ -27,24 +26,18 @@ const Hero = () => {
         </div>
         <div className="space-y-4">
           <div className="md:text-[1.3rem] space-x-4 text-primary">
-            <Link href="#about" className="hover:text-blue group space-x-1">
-              <span className="text-blue invisible group-hover:visible transition-[visibility] duration-100 ease-in-out">
-                &gt;
-              </span>
-              <span>About</span>
-            </Link>
-            <Link href="#projects" className="hover:text-blue group space-x-1">
-              <span className="text-blue invisible group-hover:visible transition-[visibility] duration-100 ease-in-out">
-                &gt;
-              </span>
-              <span>Projects</span>
-            </Link>
-            <Link href="#contact" className="hover:text-blue group space-x-1">
-              <span className="text-blue invisible group-hover:visible transition-[visibility] duration-100 ease-in-out">
-                &gt;
-              </span>
-              <span>Contact</span>
-            </Link>
+            {navigation.slice(1).map((navLink) => (
+              <Link
+                key={navLink.title}
+                href={navLink.href}
+                className="hover:text-blue group space-x-1"
+              >
+                <span className="text-blue invisible group-hover:visible transition-[visibility] duration-100 ease-in-out">
+                  &gt;
+                </span>
+                <span>{navLink.title}</span>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

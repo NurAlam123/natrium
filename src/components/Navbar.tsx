@@ -2,29 +2,26 @@
 
 import Link from "next/link";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { useRef, useState } from "react";
+import { RefObject, useRef, useState } from "react";
+import { navigation } from "@/constants/index";
 
-const Navbar = () => {
+const Navbar = ({ parentRef }: { parentRef: RefObject<HTMLDivElement> }) => {
   const [show, setShow] = useState(false);
 
   const navRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const { scrollY } = useScroll();
+  const { scrollYProgress } = useScroll({
+    target: parentRef,
+    offset: ["start start", "end end"],
+  });
 
-  useMotionValueEvent(scrollY, "change", (y) => {
-    const containerPos = containerRef.current?.getBoundingClientRect();
-    const top = containerPos?.top;
-
-    if (!top) return;
-    const bottom = document.documentElement.scrollHeight - top - 240;
-
-    if (y > top && !show && y < bottom) {
+  useMotionValueEvent(scrollYProgress, "change", (progress: number) => {
+    if (progress > 0 && progress < 1 && !show) {
       setShow(true);
       return;
     }
-
-    if ((y <= top || y > bottom) && show) {
+    if (progress <= 0 || (progress >= 1 && show)) {
       setShow(false);
       return;
     }
@@ -52,18 +49,15 @@ const Navbar = () => {
         ref={navRef}
         className="bg-dark border-dark-2 border p-4 text-sm z-10 *:text-secondary *:font-medium *:bg-dark-1 *:px-4 *:py-2 *:rounded-2xl rounded-xl flex flex-col gap-2 *:border *:border-dark-2 *:transition *:text-center"
       >
-        <Link href="/" className="hover:bg-dark/20">
-          Home
-        </Link>
-        <Link href="#about" className="hover:bg-dark/20">
-          About
-        </Link>
-        <Link href="#projects" className="hover:bg-dark/20">
-          Projects
-        </Link>
-        <Link href="#contact" className="hover:bg-dark/20">
-          Contact
-        </Link>
+        {navigation.map((navLink) => (
+          <Link
+            key={navLink.title}
+            href={navLink.href}
+            className="hover:bg-dark/20"
+          >
+            {navLink.title}
+          </Link>
+        ))}
       </motion.nav>
     </motion.section>
   );
