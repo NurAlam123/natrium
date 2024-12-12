@@ -52,7 +52,7 @@ export default function Home() {
         }}
       >
         <Hero />
-        <div ref={parentRef} className="relative border">
+        <div ref={parentRef} className="relative">
           <Navbar show={show} />
           <div>
             <About />

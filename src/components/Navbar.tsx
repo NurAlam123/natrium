@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { RefObject, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { navigation } from "@/constants/index";
 
 const Navbar = ({ show }: { show: boolean }) => {
