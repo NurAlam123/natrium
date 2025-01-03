@@ -40,11 +40,53 @@ const AnonymousMessage = () => {
     }
   };
 
-  const [state, formAction, isPending] = useActionState(handleSendBtn, false);
+  const [, formAction, isPending] = useActionState(handleSendBtn, false);
 
   return (
     <>
       {/* Anonymous message */}
+      <div className="flex justify-center items-center h-dvh">
+        <div className="space-y-4">
+          <p className="font-normal text-gray">
+            Want to send anonymous message?{" "}
+          </p>
+          <form action={formAction}>
+            <div className="relative">
+              <textarea
+                id="message"
+                name="message"
+                className="outline-none p-5 rounded-lg border-2 border-dark-3 bg-dark-1 text-gray h-[300px] resize-none focus:border-blue transition-colors duration-300"
+                placeholder="Write it down here..."
+                defaultValue={userMessage}
+                maxLength={charactersLimit}
+                onChange={(event) => countCharacters(event)}
+              ></textarea>
+
+              <p
+                className={clsx(
+                  "absolute bottom-[13px] right-[8px] text-[0.86rem] opacity-60",
+                  overLimit && "text-[#d90423]",
+                )}
+              >
+                {characters}/{charactersLimit}
+              </p>
+            </div>
+            <button
+              className={clsx(
+                "button rounded-full w-full mt-2 transition duration-700",
+                isPending
+                  ? "disabled:cursor-progress"
+                  : "disabled:cursor-not-allowed",
+              )}
+              type="submit"
+              disabled={disableButton || (isPending && true)}
+            >
+              {isPending ? <LoadingSpinner size={25} /> : "Send"}
+            </button>
+          </form>
+        </div>
+      </div>
+      {/*
       <div>
         <p className="font-normal text-gray mb-2">
           Want to send anonymous message?
@@ -82,6 +124,7 @@ const AnonymousMessage = () => {
           </button>
         </form>
       </div>
+      */}
     </>
   );
 };
