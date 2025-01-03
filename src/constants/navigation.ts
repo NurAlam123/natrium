@@ -9,15 +9,15 @@ const navigation: NavigationType[] = [
   },
   {
     title: "About",
-    href: "#about",
+    href: "/#about",
   },
   {
     title: "Projects",
-    href: "#projects",
+    href: "/#projects",
   },
   {
     title: "Contact",
-    href: "#contact",
+    href: "/#contact",
   },
 ];
 

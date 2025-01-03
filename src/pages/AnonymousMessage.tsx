@@ -86,45 +86,6 @@ const AnonymousMessage = () => {
           </form>
         </div>
       </div>
-      {/*
-      <div>
-        <p className="font-normal text-gray mb-2">
-          Want to send anonymous message?
-        </p>
-        <form action={formAction}>
-          <div className="relative">
-            <textarea
-              id="message"
-              name="message"
-              className="outline-none p-5 rounded-lg border-2 border-dark-3 bg-dark-1 text-gray h-[300px] resize-none focus:border-blue transition-colors duration-300"
-              placeholder="Write it down here..."
-              defaultValue={userMessage}
-              maxLength={charactersLimit}
-              onChange={(event) => countCharacters(event)}
-            ></textarea>
-            <p
-              className={`absolute bottom-[13px] right-[8px] text-[0.86rem] font-light ${
-                overLimit ? "text-[#d90423]" : "text-gray opacity-[0.6]"
-              }`}
-            >
-              {characters}/{charactersLimit}
-            </p>
-          </div>
-          <button
-            className={clsx(
-              "button rounded-full w-full mt-2",
-              isPending
-                ? "disabled:cursor-progress"
-                : "disabled:cursor-not-allowed",
-            )}
-            type="submit"
-            disabled={disableButton || (isPending && true)}
-          >
-            {isPending ? <LoadingSpinner size={25} /> : "Send"}
-          </button>
-        </form>
-      </div>
-      */}
     </>
   );
 };
