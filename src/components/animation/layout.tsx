@@ -23,4 +23,14 @@ export const SlideIn = ({
   );
 };
 
-//export const
+export const BlurOut = ({ children }: { children?: React.ReactNode }) => {
+  return (
+    <motion.div
+      initial={{ filter: "blur(10px)" }}
+      whileInView={{ filter: "blur(0px)" }}
+      transition={{ duration: 1.5 }}
+    >
+      {children}
+    </motion.div>
+  );
+};
