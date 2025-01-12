@@ -1,4 +1,4 @@
-import AnonymousMessage from "@/pages/AnonymousMessage";
+import AnonymousMessage from "@/sections/AnonymousMessage";
 
 export default function MessagePage() {
   return <AnonymousMessage />;

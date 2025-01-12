@@ -1,4 +1,4 @@
-import Footer from "@/pages/Footer";
+import Footer from "@/sections/Footer";
 import { Toaster } from "react-hot-toast";
 
 export default function RootLayout({

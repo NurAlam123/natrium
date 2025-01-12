@@ -3,11 +3,11 @@
 import CursorBlur from "@/components/CursorBlur";
 import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
-import About from "@/pages/About";
-import Contact from "@/pages/Contact";
-import Footer from "@/pages/Footer";
-import Hero from "@/pages/Hero";
-import Projects from "@/pages/Projects";
+import About from "@/sections/About";
+import Contact from "@/sections/Contact";
+import Footer from "@/sections/Footer";
+import Hero from "@/sections/Hero";
+import Projects from "@/sections/Projects";
 
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useRef, useState } from "react";
