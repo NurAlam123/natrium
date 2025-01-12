@@ -5,7 +5,7 @@ import React from "react";
 const HeroNavigation = () => {
   return (
     <div className="space-y-4">
-      <div className="md:text-[1.3rem] space-x-4 text-primary">
+      <div className="md:text-xl space-x-4 text-primary">
         {navigation.slice(1).map((navLink) => (
           <Link
             key={navLink.title}

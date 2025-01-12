@@ -5,7 +5,7 @@ const Skills = () => {
   return (
     <div>
       <div className=" w-full bg-dark-1  rounded-xl px-4 py-2 relative">
-        <h2 className="text-2xl text-white font-semibold">Skills</h2>
+        <h4>Skills</h4>
       </div>
       <div className="relative text-daisy">
         <div className="w-[2px] h-full absolute bg-dark-1 rounded-b-full ms-3" />
@@ -24,9 +24,7 @@ const ProgrammingLanguage = () => {
     <>
       <div className="ml-8 pt-2 relative">
         <div>
-          <h4 className="text-lg font-semibold text-soft-white">
-            Programming Languages
-          </h4>
+          <h6 className="text-soft-white">Programming Languages</h6>
         </div>
         <ul className="list-disc ml-10 mb-2">
           {programmings.map((programming) => (
@@ -48,9 +46,7 @@ const Frameworks = () => {
   return (
     <>
       <div className="ml-8 pt-6 relative">
-        <h4 className="text-lg font-semibold text-soft-white">
-          Frameworks & Technologies
-        </h4>
+        <h6 className="text-soft-white">Frameworks & Technologies</h6>
         <ul className="list-disc ml-10 mb-2">
           {frameworks.map((framework) => (
             <li
@@ -71,9 +67,7 @@ const Tools = () => {
   return (
     <>
       <div className="ml-8 pt-6 relative">
-        <h4 className="text-lg font-semibold text-soft-white">
-          Tools & Softwares
-        </h4>
+        <h6 className="text-soft-white">Tools & Softwares</h6>
         <ul className="list-disc ml-10 mb-2">
           {tools.map((tool) => (
             <li
@@ -94,7 +88,7 @@ const Databases = () => {
   return (
     <>
       <div className="ml-8 pt-6 relative">
-        <h4 className="text-lg font-semibold text-soft-white">Database</h4>
+        <h6 className="text-soft-white">Database</h6>
         <ul className="list-disc ml-10 mb-2">
           {database.map((base) => (
             <li

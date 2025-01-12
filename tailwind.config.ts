@@ -17,8 +17,8 @@ const config: Config = {
       },
       colors: {
         dark: "#0a0a0a",
-        primary: "#ffffff",
-        secondary: "#fbfcf8",
+        primary: "#fbfcf8",
+        secondary: "#fbfcfa",
         daisy: "#fafafa",
         blue: "#6090e8",
         "dark-1": "rgba(255, 255, 255, 0.1)",

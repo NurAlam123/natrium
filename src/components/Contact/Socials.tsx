@@ -3,8 +3,8 @@ import { contacts } from "@/constants";
 const Socials = () => {
   return (
     <>
-      <h3 className="font-semibold text-2xl">Socials</h3>
-      <div className="flex gap-2 text-[2.3rem] items-center text-secondary">
+      <h4>Socials</h4>
+      <div className="flex gap-2 text-4xl items-center text-secondary">
         {contacts.map((contact) => (
           <a
             key={contact.name}

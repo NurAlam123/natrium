@@ -3,7 +3,7 @@ import { ScrollDown } from "@/components/ui";
 
 const Hero = () => {
   return (
-    <section className="h-svh flex justify-center items-center relative">
+    <section className="h-screen flex justify-center items-center relative">
       <div>
         <NameAndAddress />
         <HeroNavigation />

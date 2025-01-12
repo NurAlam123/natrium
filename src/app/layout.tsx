@@ -58,7 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${bebasNeue.variable} font-poppins antialiased`}
+        className={`${poppins.variable} ${bebasNeue.variable} text-primary font-poppins antialiased`}
       >
         {children}
       </body>
