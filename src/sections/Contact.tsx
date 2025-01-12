@@ -1,29 +1,13 @@
-"use client";
-
+import { FadeInView } from "@/components/animation/layout";
 import { MessageLink, Socials } from "@/components/Contact";
-import { motion, useScroll } from "framer-motion";
-import { useRef } from "react";
 
 const Contact = () => {
-  const containerRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end end"],
-  });
-
   return (
-    <motion.section
-      id="contact"
-      ref={containerRef}
-      className="flex justify-center relative mx-4 py-16"
-      style={{
-        opacity: scrollYProgress,
-      }}
-    >
-      <div className="text-justify">
+    <section id="contact" className="flex justify-center relative mx-4 py-16">
+      <FadeInView>
         <h2 className="mb-4">Contact</h2>
-        <div className="space-y-4">
-          <div className="max-w-screen-md">
+        <div className="space-y-4 mx-4">
+          <div>
             <p className="text-lg font-semibold">Got an idea?</p>
             <p>
               <b className="text-daisy">OH GREAT!</b> Let&apos;s discuss about
@@ -42,8 +26,8 @@ const Contact = () => {
             <MessageLink />
           </div>
         </div>
-      </div>
-    </motion.section>
+      </FadeInView>
+    </section>
   );
 };
 
