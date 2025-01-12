@@ -92,7 +92,8 @@ const ProjectCard = ({
                 target="_blank"
                 className="text-daisy hover:text-blue/70 transition"
               >
-                <FaGithub />
+                <span className="sr-only">Github</span>
+                <FaGithub aria-hidden focusable={false} />
               </a>
             )}
             {links.live && (
@@ -101,7 +102,8 @@ const ProjectCard = ({
                 href={links.live}
                 className="text-daisy hover:text-blue/70 transition"
               >
-                <FaLink />
+                <span className="sr-only">Live site</span>
+                <FaLink aria-hidden focusable={false} />
               </a>
             )}
           </div>
