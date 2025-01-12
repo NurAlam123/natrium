@@ -3,7 +3,7 @@ import { contacts } from "@/constants";
 const Socials = () => {
   return (
     <>
-      <h4>Socials</h4>
+      <p className="font-medium text-2xl md:text-3xl xl:text-4xl">Socials</p>
       <div className="flex gap-2 text-4xl items-center text-secondary">
         {contacts.map((contact) => (
           <a

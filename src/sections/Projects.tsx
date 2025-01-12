@@ -17,7 +17,7 @@ const Projects = () => {
   return (
     <section id="projects" className="mx-4 py-10">
       <div className="max-w-screen-md mx-auto">
-        <h1 className="mb-6">Projects</h1>
+        <h2 className="mb-6">Projects</h2>
         <div className="p-2 flex gap-12 flex-col">
           {projects.map((project, index) => (
             <ProjectCard

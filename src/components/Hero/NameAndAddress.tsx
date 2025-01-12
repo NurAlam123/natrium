@@ -14,9 +14,9 @@ const NameAndAddress = () => {
         <div className="opacity-20 absolute -top-20 -left-4 -z-[100]">
           <Sodium />
         </div>
-        <p className="font-bebas-neue font-semibold not-italic sm:text-[64px] text-[81px] md:text-[258px] tracking-wider text-secondary !leading-tight">
+        <h1 className="font-bebas-neue font-semibold not-italic sm:text-[64px] text-[81px] md:text-[258px] tracking-wider text-secondary !leading-tight">
           Nur Alam
-        </p>
+        </h1>
       </div>
     </div>
   );

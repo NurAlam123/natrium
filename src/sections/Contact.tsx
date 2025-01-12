@@ -21,7 +21,7 @@ const Contact = () => {
       }}
     >
       <div className="text-justify">
-        <h1 className="mb-4">Contact</h1>
+        <h2 className="mb-4">Contact</h2>
         <div className="space-y-4">
           <div className="max-w-screen-md">
             <p className="text-lg font-semibold">Got an idea?</p>

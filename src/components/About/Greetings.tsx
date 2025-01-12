@@ -7,7 +7,7 @@ const Greetings = () => {
       {/* Greetings */}
       <div>
         <SlideIn>
-          <h1 className="mb-4 font-semibold">Hi,</h1>
+          <h2 className="mb-4 font-semibold">Hi,</h2>
         </SlideIn>
         <SlideIn>
           <h3 className="mb-2 font-medium">

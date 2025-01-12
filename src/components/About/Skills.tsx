@@ -18,89 +18,76 @@ const Skills = () => {
   );
 };
 
-// Programming Languages
-const ProgrammingLanguage = () => {
+const Base = ({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) => {
   return (
     <>
       <div className="ml-8 pt-2 relative">
         <div>
-          <h6 className="text-soft-white">Programming Languages</h6>
+          <p className="text-soft-white font-medium text-base md:text-lg xl:text-xl">
+            {title}
+          </p>
         </div>
-        <ul className="list-disc ml-10 mb-2">
-          {programmings.map((programming) => (
-            <li
-              className="list-item hover:text-blue hover:font-bold transition duration-700 w-fit"
-              key={programming}
-            >
-              {programming}
-            </li>
-          ))}
-        </ul>
+        <ul className="list-disc ml-10 mb-2">{children}</ul>
       </div>
     </>
+  );
+};
+
+const ListItem = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <li className="list-item hover:text-blue hover:font-bold transition duration-700 w-fit">
+      {children}
+    </li>
+  );
+};
+
+// Programming Languages
+const ProgrammingLanguage = () => {
+  return (
+    <Base title="Programming Languages ">
+      {programmings.map((programming) => (
+        <ListItem key={programming}>{programming}</ListItem>
+      ))}
+    </Base>
   );
 };
 
 // Frameworks
 const Frameworks = () => {
   return (
-    <>
-      <div className="ml-8 pt-6 relative">
-        <h6 className="text-soft-white">Frameworks & Technologies</h6>
-        <ul className="list-disc ml-10 mb-2">
-          {frameworks.map((framework) => (
-            <li
-              className="list-item hover:text-blue hover:font-bold transition duration-700 w-fit"
-              key={framework}
-            >
-              {framework}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </>
+    <Base title="Frameworks & Technologies">
+      {frameworks.map((framework) => (
+        <ListItem key={framework}>{framework}</ListItem>
+      ))}
+    </Base>
   );
 };
 
 // Tools
 const Tools = () => {
   return (
-    <>
-      <div className="ml-8 pt-6 relative">
-        <h6 className="text-soft-white">Tools & Softwares</h6>
-        <ul className="list-disc ml-10 mb-2">
-          {tools.map((tool) => (
-            <li
-              className="list-item hover:text-blue hover:font-bold transition duration-700 w-fit"
-              key={tool}
-            >
-              {tool}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </>
+    <Base title="Tools & Softwares">
+      {tools.map((tool) => (
+        <ListItem key={tool}>{tool}</ListItem>
+      ))}
+    </Base>
   );
 };
 
 // Databases
 const Databases = () => {
   return (
-    <>
-      <div className="ml-8 pt-6 relative">
-        <h6 className="text-soft-white">Database</h6>
-        <ul className="list-disc ml-10 mb-2">
-          {database.map((base) => (
-            <li
-              className="list-item hover:text-blue hover:font-bold transition duration-700 w-fit"
-              key={base}
-            >
-              {base}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </>
+    <Base title="Database">
+      {database.map((base) => (
+        <ListItem key={base}>{base}</ListItem>
+      ))}
+    </Base>
   );
 };
 
