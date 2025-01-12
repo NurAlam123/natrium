@@ -90,7 +90,7 @@ const ProjectCard = ({
               <a
                 href={links.github}
                 target="_blank"
-                className="text-gray hover:text-blue/70 transition"
+                className="text-daisy hover:text-blue/70 transition"
               >
                 <FaGithub />
               </a>
@@ -99,7 +99,7 @@ const ProjectCard = ({
               <a
                 target="_blank"
                 href={links.live}
-                className="text-gray hover:text-blue/70 transition"
+                className="text-daisy hover:text-blue/70 transition"
               >
                 <FaLink />
               </a>

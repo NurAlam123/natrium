@@ -12,7 +12,7 @@ export default function NotFound() {
             <span className="text-blue inline-block text-6xl">
               <strong>404</strong>
             </span>
-            <span className="text-gray inline-block text-3xl">
+            <span className="text-daisy inline-block text-3xl">
               Page Not Found
             </span>
           </div>

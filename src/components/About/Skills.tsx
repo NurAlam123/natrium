@@ -7,7 +7,7 @@ const Skills = () => {
       <div className=" w-full bg-dark-1  rounded-xl px-4 py-2 relative">
         <h2 className="text-2xl text-white font-semibold">Skills</h2>
       </div>
-      <div className="relative text-gray">
+      <div className="relative text-daisy">
         <div className="w-[2px] h-full absolute bg-dark-1 rounded-b-full ms-3" />
         <ProgrammingLanguage />
         <Frameworks />

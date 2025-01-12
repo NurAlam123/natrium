@@ -18,7 +18,7 @@ const Greetings = () => {
           </h2>
         </SlideIn>
         <SlideIn>
-          <p className="text-gray text-sm mb-4">
+          <p className="text-daisy text-sm mb-4">
             {/* A Web Developer - Currently learning{" "}
               <strong>Web Development</strong> */}
             - <strong>Front-End Developer</strong>

@@ -26,7 +26,7 @@ const Contact = () => {
           <div className="max-w-screen-md">
             <p className="text-xl font-semibold">Got an idea?</p>
             <p>
-              <b className="text-gray">OH GREAT!</b> Let&apos;s discuss about
+              <b className="text-daisy">OH GREAT!</b> Let&apos;s discuss about
               it.
             </p>
             <p>

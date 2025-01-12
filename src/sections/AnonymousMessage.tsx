@@ -47,7 +47,7 @@ const AnonymousMessage = () => {
       {/* Anonymous message */}
       <div className="flex justify-center items-center h-dvh">
         <div className="space-y-4">
-          <p className="font-normal text-gray">
+          <p className="font-normal text-daisy">
             Want to send anonymous message?{" "}
           </p>
           <form action={formAction}>
@@ -55,7 +55,7 @@ const AnonymousMessage = () => {
               <textarea
                 id="message"
                 name="message"
-                className="outline-none p-5 rounded-lg border-2 border-dark-3 bg-dark-1 text-gray h-[300px] resize-none focus:border-blue transition-colors duration-300"
+                className="outline-none p-5 rounded-lg border-2 border-dark-3 bg-dark-1 text-daisy h-[300px] resize-none focus:border-blue transition-colors duration-300"
                 placeholder="Write it down here..."
                 defaultValue={userMessage}
                 maxLength={charactersLimit}
