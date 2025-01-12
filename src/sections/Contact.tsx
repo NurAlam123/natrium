@@ -15,7 +15,7 @@ const Contact = () => {
     <motion.section
       id="contact"
       ref={containerRef}
-      className="flex justify-center items-center relative mx-4 h-svh"
+      className="flex justify-center relative mx-4 py-16"
       style={{
         opacity: scrollYProgress,
       }}

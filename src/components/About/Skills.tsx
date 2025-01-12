@@ -4,7 +4,7 @@ import { database, frameworks, programmings, tools } from "@/constants";
 const Skills = () => {
   return (
     <div>
-      <div className=" w-full bg-dark-1  rounded-xl px-4 py-2 relative">
+      <div className=" w-full max-w-screen-md  bg-dark-1  rounded-xl px-4 py-2 relative">
         <h4>Skills</h4>
       </div>
       <div className="relative text-daisy">
@@ -41,7 +41,7 @@ const Base = ({
 
 const ListItem = ({ children }: { children: React.ReactNode }) => {
   return (
-    <li className="list-item hover:text-blue hover:font-bold transition duration-700 w-fit">
+    <li className="list-item hover:text-blue hover:font-medium transition duration-700 w-fit">
       {children}
     </li>
   );

@@ -15,25 +15,23 @@ const Projects = () => {
   });
 
   return (
-    <section id="projects" className="mx-4 py-10">
-      <div className="max-w-screen-md mx-auto">
-        <h2 className="mb-6">Projects</h2>
-        <div className="p-2 flex gap-12 flex-col">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={project.title}
-              index={index}
-              title={project.title}
-              description={project.description}
-              image={project.image}
-              links={project.links}
-              techs={project.techs}
-              range={[index * (projects.length / 100), 1]}
-              targetScale={1 - (projects.length - index) * 0.04}
-              progress={scrollYProgress}
-            />
-          ))}
-        </div>
+    <section id="projects" className="mx-4 py-12">
+      <h2 className="mb-6">Projects</h2>
+      <div className="md:p-2 flex gap-4 flex-col">
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={project.title}
+            index={index}
+            title={project.title}
+            description={project.description}
+            image={project.image}
+            links={project.links}
+            techs={project.techs}
+            range={[index * (projects.length / 100), 1]}
+            targetScale={1 - (projects.length - index) * 0.04}
+            progress={scrollYProgress}
+          />
+        ))}
       </div>
     </section>
   );

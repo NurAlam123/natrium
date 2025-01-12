@@ -47,11 +47,11 @@ const ProjectCard = ({
     <motion.section
       style={{
         scale,
-        top: `calc(10% + ${index * 20}px)`,
+        top: `calc(5% + ${index * 20}px)`,
       }}
-      className="sticky mb-2 h-svh"
+      className="sticky mb-4"
     >
-      <div className="p-4 md:p-8 mt-4 h-[424px] md:h-[640px] bg-dark border border-dark-2 rounded-xl flex gap-4 max-w-screen-md mx-auto">
+      <div className="p-4 md:p-8 mt-4 h-[428px] md:h-[640px] bg-dark border border-dark-2 rounded-xl flex gap-4 max-w-screen-md mx-auto">
         <div className="w-8">
           <Link
             href={"#"}
@@ -69,7 +69,7 @@ const ProjectCard = ({
             height={720}
           />
           <div className="space-y-2">
-            <p className="text-sm line-clamp-1">{description}</p>
+            <p className="text-sm line-clamp-3">{description}</p>
             <Link className="inline-flex gap-2 text-blue" href={"#"}>
               Read More...
               <ArrowRight />

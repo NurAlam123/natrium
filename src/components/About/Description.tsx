@@ -5,7 +5,7 @@ const Description = () => {
   return (
     <>
       {/* Description */}
-      <div className="max-w-[550px] mb-6 space-y-2 mx-auto">
+      <div className="max-w-screen-md mb-6 space-y-2">
         <SlideIn>
           <p className="text-secondary">
             I love building clean, responsive, and interactive websites using

@@ -6,9 +6,11 @@ export default function Home() {
     <>
       <main className="max-w-screen-2xl mx-auto">
         <Hero />
-        <About />
-        <Projects />
-        <Contact />
+        <section className="max-w-screen-lg mx-auto">
+          <About />
+          <Projects />
+          <Contact />
+        </section>
         {/* React Hot Toast */}
         <Toaster position="top-center" reverseOrder={false} />
       </main>
