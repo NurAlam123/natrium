@@ -12,11 +12,14 @@ const config: Config = {
         poppins: ["var(--font-poppins)"],
         "bebas-neue": ["var(--font-bebas-neue)"],
       },
+      container: {
+        center: true,
+      },
       colors: {
-        dark: "#0c0c0c",
-        primary: "#efefef",
-        secondary: "#d6d6d6",
-        gray: "#b5b5b5",
+        dark: "#0a0a0a",
+        primary: "#ffffff",
+        secondary: "#fbfcf8",
+        daisy: "#fafafa",
         blue: "#6090e8",
         "dark-1": "rgba(255, 255, 255, 0.1)",
         "dark-2": "rgba(255, 255, 255, 0.2)",

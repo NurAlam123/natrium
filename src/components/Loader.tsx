@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import Sodium from "./Sodium";
+import { Sodium } from "./ui";
 
 const DELAY = 3;
 const DURATION = 0.8;

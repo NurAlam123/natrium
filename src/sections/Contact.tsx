@@ -1,9 +1,7 @@
 "use client";
 
-import { contacts } from "@/constants";
+import { MessageLink, Socials } from "@/components/Contact";
 import { motion, useScroll } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 import { useRef } from "react";
 
 const Contact = () => {
@@ -37,36 +35,11 @@ const Contact = () => {
           </div>
           {/* Contact Links */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-2xl">Socials</h3>
-            <div className="flex gap-2 text-[2.3rem] items-center text-secondary">
-              {contacts.map((contact) => (
-                <a
-                  key={contact.name}
-                  href={contact.link}
-                  target="_blank"
-                  className="group relative"
-                >
-                  <div className="hover:blur-sm">
-                    <contact.icon />
-                  </div>
-                  <span className="tooltip group-hover:inline-block group-hover:absolute -translate-x-1/2 left-1/2 mt-2">
-                    {contact.name}
-                  </span>
-                </a>
-              ))}
-            </div>
+            <Socials />
           </div>
           {/* Anonymous Message */}
           <div className="space-y-2 text-lg">
-            <p className="font-semibold text-start mt-6 max-w-xs">
-              Want to send an anonymous message?
-            </p>
-            <Link href="/message" className="flex text-blue w-fit relative">
-              Click here
-              <span className="inline-block absolute left-full top-0 -translate-y-1">
-                <ArrowUpRight className="size-4" />
-              </span>
-            </Link>
+            <MessageLink />
           </div>
         </div>
       </div>

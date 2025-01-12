@@ -5,9 +5,12 @@
 
 /* root style */
 :root {
-  background-color: #0c0c0c;
-  color: #efefef;
-  scroll-behavior: smooth;
+  background: linear-gradient(120deg, #0b1215, #0a0a0a, #0b1215);
+  background-color: #0a0a0a;
+  color: #fff;
+  background-repeat: no-repeat;
+
+  /*scroll-behavior: smooth;*/
   /* prevent text selection */
   /*-webkit-user-select: none;*/
   /*-ms-user-select: none;*/

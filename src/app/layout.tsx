@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { bebasNeue, poppins } from "./fonts";
-import { Toaster } from "react-hot-toast";
 import { meta } from "./config";
 
 export const metadata: Metadata = {
@@ -61,10 +60,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${bebasNeue.variable} font-poppins antialiased`}
       >
-        <main className="max-w-screen-xl mx-auto relative">
-          {children}
-          <Toaster position="top-center" reverseOrder={false} />
-        </main>
+        {children}
       </body>
     </html>
   );

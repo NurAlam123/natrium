@@ -1,4 +1,4 @@
-import Sodium from "@/components/Sodium";
+import { Sodium } from "@/components/ui";
 
 export default function NotFound() {
   return (
