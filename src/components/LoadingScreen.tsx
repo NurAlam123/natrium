@@ -3,30 +3,25 @@
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { SodiumLoadingScreen } from "./ui";
-
-const DELAY = 3;
+import { LOADING_SCREEN_DURATION } from "@/constants";
 
 // Main Loading Screen
-const LoadingScreen: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+const LoadingScreen = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  //useEffect(() => {
-  //  (async () => {
-  //    setTimeout(() => {
-  //      setIsLoading(false);
-  //    }, DELAY * 1000);
-  //  })();
-  //});
+  useEffect(() => {
+    (async () => {
+      setTimeout(() => {
+        setIsLoading(false);
+        // scroll to the hero section
+        window.scrollTo(0, 0);
+      }, LOADING_SCREEN_DURATION * 1000);
+    })();
+  });
 
   return (
     <AnimatePresence mode="wait">
-      {isLoading ? (
-        <SodiumLoadingScreen key="loading-screen" />
-      ) : (
-        <div key="main-content">{children}</div>
-      )}
+      {isLoading && <SodiumLoadingScreen key="loading-screen" />}
     </AnimatePresence>
   );
 };

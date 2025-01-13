@@ -3,6 +3,8 @@ import contacts from "./contacts";
 import navigation from "./navigation";
 import { programmings, frameworks, database, tools } from "./about";
 
+export const LOADING_SCREEN_DURATION = 3;
+
 export {
   programmings,
   frameworks,

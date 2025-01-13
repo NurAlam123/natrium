@@ -1,5 +1,4 @@
 import { FaLocationArrow } from "react-icons/fa";
-import { Sodium } from "../ui";
 
 const NameAndAddress = () => {
   return (
@@ -10,14 +9,9 @@ const NameAndAddress = () => {
         </span>
         <address>Dhaka, Bangladesh</address>
       </div>
-      <div className="relative">
-        <div className="opacity-20 absolute -top-20 -left-4 -z-[100]">
-          <Sodium />
-        </div>
-        <h1 className="font-bebas-neue font-semibold not-italic sm:text-[64px] text-[81px] md:text-[258px] tracking-wider text-secondary !leading-tight">
-          Nur Alam
-        </h1>
-      </div>
+      <h1 className="font-bebas-neue font-semibold not-italic sm:text-[64px] text-[81px] md:text-[258px] tracking-wider text-secondary !leading-tight">
+        Nur Alam
+      </h1>
     </div>
   );
 };

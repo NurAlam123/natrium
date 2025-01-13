@@ -12,7 +12,8 @@ type SodiumProps = {
 const Sodium = ({ className, ...rest }: SodiumProps) => {
   return (
     <motion.div
-      className={twMerge(clsx("p-2 size-[400px] relative", className))}
+      suppressHydrationWarning
+      className={twMerge(clsx("p-2 size-[400px]", className))}
       {...rest}
       aria-hidden
     >
@@ -42,7 +43,7 @@ const Sodium = ({ className, ...rest }: SodiumProps) => {
 
 const Nucleas: React.FC<{ name: string }> = ({ name }) => {
   return (
-    <div className="w-20 h-20 bg-white/20 rounded-full flex justify-center items-center">
+    <div className="size-20 bg-white/20 rounded-full flex justify-center items-center">
       <span className="font-semibold">{name}</span>
     </div>
   );
@@ -55,6 +56,10 @@ const Shell: React.FC<{
 }> = ({ size, children, spinDuration = 2 }) => {
   return (
     <motion.div
+      style={{
+        width: size,
+        height: size,
+      }}
       animate={{
         rotate: "1turn",
       }}
@@ -63,7 +68,7 @@ const Shell: React.FC<{
         ease: "linear",
         duration: spinDuration,
       }}
-      className={twMerge(clsx("shell", `size-[${size}px]`))}
+      className="shell"
     >
       {children}
     </motion.div>
