@@ -1,90 +1,125 @@
 "use client";
 
 import clsx from "clsx";
-import { motion } from "framer-motion";
+import { twMerge } from "tailwind-merge";
 
-const Sodium = ({ className }: { className?: string }) => {
+import { motion, MotionProps } from "framer-motion";
+
+type SodiumProps = {
+  className?: string;
+} & MotionProps;
+
+const Sodium = ({ className, ...rest }: SodiumProps) => {
+  return (
+    <motion.div
+      className={twMerge(clsx("p-2 size-[400px] relative", className))}
+      {...rest}
+      aria-hidden
+    >
+      <div className="flex justify-center items-center size-full relative">
+        <Nucleas name="Na" />
+        {/* 1st shell - K shell */}
+        <Shell size={150}>
+          <Electron valign="center" halign="left" />
+          <Electron valign="center" halign="right" />
+        </Shell>
+
+        {/* 2nd shell - L shell */}
+        <Shell size={250} spinDuration={4}>
+          <PairElectron direction="horizontal" valign="center" halign="left" />
+          <PairElectron direction="horizontal" valign="center" halign="right" />
+          <PairElectron direction="vertical" valign="top" halign="center" />
+          <PairElectron direction="vertical" valign="bottom" halign="center" />
+        </Shell>
+        {/* 3rd shell - M shell */}
+        <Shell size={350} spinDuration={6}>
+          <Electron valign="center" halign="left" />
+        </Shell>
+      </div>
+    </motion.div>
+  );
+};
+
+const Nucleas: React.FC<{ name: string }> = ({ name }) => {
+  return (
+    <div className="w-20 h-20 bg-white/20 rounded-full flex justify-center items-center">
+      <span className="font-semibold">{name}</span>
+    </div>
+  );
+};
+
+const Shell: React.FC<{
+  size: number;
+  children: React.ReactNode;
+  spinDuration?: number;
+}> = ({ size, children, spinDuration = 2 }) => {
+  return (
+    <motion.div
+      animate={{
+        rotate: "1turn",
+      }}
+      transition={{
+        repeat: Infinity,
+        ease: "linear",
+        duration: spinDuration,
+      }}
+      className={twMerge(clsx("shell", `size-[${size}px]`))}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+// ==== Position for Electrons ====
+// Vertical Position
+const vPosition = {
+  top: "top-0",
+  bottom: "top-full",
+  center: "top-1/2",
+};
+
+// Horizontal Position
+const hPosition = {
+  left: "left-0",
+  right: "left-full",
+  center: "left-1/2",
+};
+// =================================
+
+type ElectronProps = {
+  halign: "left" | "right" | "center";
+  valign: "top" | "center" | "bottom";
+};
+
+const Electron: React.FC<ElectronProps> = ({ halign, valign }) => {
+  return (
+    <>
+      <div
+        className={twMerge(
+          clsx("electron absolute", hPosition[halign], vPosition[valign]),
+        )}
+      />
+    </>
+  );
+};
+
+const PairElectron: React.FC<
+  { direction: "horizontal" | "vertical" } & ElectronProps
+> = ({ halign, valign, direction }) => {
   return (
     <div
-      className={clsx(
-        "flex items-center justify-center absolute -z-[999]",
-        className,
+      className={twMerge(
+        clsx(
+          "flex absolute",
+          direction === "horizontal" && "flex-col -translate-y-1/4 ",
+          direction === "vertical" && "flex-row -translate-x-1/4",
+          hPosition[halign],
+          vPosition[valign],
+        ),
       )}
     >
-      <div className="w-20 h-20 bg-white/20 rounded-full flex justify-center items-center">
-        <span className="font-semibold">Na</span>
-      </div>
-      {/* 1st shell - K shell */}
-      <motion.div
-        animate={{
-          rotate: "1turn",
-        }}
-        transition={{
-          repeat: Infinity,
-          ease: "linear",
-          duration: 2,
-        }}
-        className="shell size-[150px]"
-      >
-        {/* 1s1 */}
-        <div className="electron top-1/2 absolute" />
-        {/* 1s2 */}
-        <div className="electron left-full top-1/2 absolute" />
-      </motion.div>
-
-      {/* 2nd shell - L shell */}
-      <motion.div
-        animate={{
-          rotate: "1turn",
-        }}
-        transition={{
-          repeat: Infinity,
-          ease: "linear",
-          duration: 4,
-        }}
-        className="shell size-[250px]"
-      >
-        <div className="absolute top-1/2">
-          {/* 2s1 */}
-          <div className="electron" />
-          {/* 2s2 */}
-          <div className="electron" />
-        </div>
-        <div className="absolute top-0 left-1/2 flex flex-row">
-          {/* 2p1 */}
-          <div className="electron left-full top-1/2" />
-          {/* 2p2 */}
-          <div className="electron top-0 left-1/2" />
-        </div>
-        <div className="absolute left-full top-1/2">
-          {/* 2p3 */}
-          <div className="electron left-full top-1/2" />
-          {/* 2p4 */}
-          <div className="electron top-1/2 left-full" />
-        </div>
-        <div className="absolute left-1/2 top-full flex flex-row">
-          {/* 2p5 */}
-          <div className="electron" />
-          {/* 2p6 */}
-          <div className="electron top-full left-1/2" />
-        </div>
-      </motion.div>
-
-      {/* 3rd shell - M shell */}
-      <motion.div
-        animate={{
-          rotate: "1turn",
-        }}
-        transition={{
-          repeat: Infinity,
-          ease: "linear",
-          duration: 6,
-        }}
-        className="shell size-[350px]"
-      >
-        {/* 3s1 */}
-        <div className="electron absolute top-1/2" />
-      </motion.div>
+      <div className="electron" />
+      <div className="electron" />
     </div>
   );
 };
