@@ -1,14 +1,18 @@
 "use client";
+import { LOADING_SCREEN_DURATION } from "@/constants";
 import { motion, useInView, Variants } from "framer-motion";
 import { useEffect, useRef } from "react";
 
-export const SlideIn = ({
-  children,
-  direction = "left",
-}: {
+type Props = {
   children: React.ReactNode;
-  direction?: "left" | "right";
-}) => {
+  className?: string;
+};
+
+export const SlideIn: React.FC<
+  {
+    direction?: "left" | "right";
+  } & Props
+> = ({ children, direction = "left" }) => {
   return (
     <motion.div
       initial={direction}
@@ -24,7 +28,7 @@ export const SlideIn = ({
   );
 };
 
-export const BlurOut = ({ children }: { children?: React.ReactNode }) => {
+export const BlurOut: React.FC<Props> = ({ children }) => {
   return (
     <motion.div
       initial={{ filter: "blur(10px)" }}
@@ -36,27 +40,26 @@ export const BlurOut = ({ children }: { children?: React.ReactNode }) => {
   );
 };
 
-const fadeInViewVariants: Variants = {
-  initial: {
-    opacity: 0,
-    scale: 0.8,
-  },
-  fadeIn: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.4,
-      ease: "easeIn",
+export const FadeInView: React.FC<
+  {
+    once?: boolean;
+    amount?: number;
+  } & Props
+> = ({ children, once = false, className, amount = 0.3 }) => {
+  const fadeInViewVariants: Variants = {
+    initial: {
+      opacity: 0,
+      scale: 0.8,
     },
-  },
-};
-
-export const FadeInView: React.FC<{
-  children: React.ReactNode;
-  className?: string;
-  once?: boolean;
-  amount?: number;
-}> = ({ children, once = false, className, amount = 0.3 }) => {
+    fadeIn: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.4,
+        ease: "easeIn",
+      },
+    },
+  };
   const containerRef = useRef<HTMLDivElement>(null);
   const inView = useInView(containerRef, { amount: amount, once: once });
 
@@ -66,6 +69,31 @@ export const FadeInView: React.FC<{
       animate={inView ? "fadeIn" : "initial"}
       variants={fadeInViewVariants}
       className={className}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+export const FadeIn: React.FC<
+  Props & {
+    delay: number;
+  }
+> = ({ children, delay }) => {
+  return (
+    <motion.div
+      initial={{
+        opacity: 0,
+        scale: 0.95,
+      }}
+      animate={{
+        opacity: 1,
+        scale: 1,
+      }}
+      transition={{
+        duration: 0.6,
+        delay: delay,
+      }}
     >
       {children}
     </motion.div>

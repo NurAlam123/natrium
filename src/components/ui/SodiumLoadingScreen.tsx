@@ -3,10 +3,13 @@
 import { motion, Variants } from "framer-motion";
 import { Sodium } from "@/components/ui";
 import { useMediaQuery } from "react-responsive";
-import { LOADING_SCREEN_DURATION } from "@/constants";
+import {
+  LOADING_SCREEN_DURATION,
+  LOADING_SCREEN_EXIT_DURATION,
+} from "@/constants/animation-times";
 
 const EXIT_DELAY = LOADING_SCREEN_DURATION;
-const EXIT_DURATION = 0.8;
+const EXIT_DURATION = LOADING_SCREEN_EXIT_DURATION;
 const ANIMATION_DELAY = EXIT_DELAY - EXIT_DURATION;
 const ANIMATION_DURATION = EXIT_DELAY - ANIMATION_DELAY;
 

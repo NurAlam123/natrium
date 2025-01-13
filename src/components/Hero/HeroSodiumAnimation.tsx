@@ -1,7 +1,10 @@
 "use client";
 import { useMediaQuery } from "react-responsive";
 import { Sodium } from "../ui";
-import { LOADING_SCREEN_DURATION } from "@/constants";
+import {
+  HERO_SODIUM_ANIMATION_DELAY,
+  HERO_SODIUM_ANIMATION_DURATION,
+} from "@/constants/animation-times";
 
 const HeroSodiumAnimation = () => {
   const isDesktop = useMediaQuery({ minWidth: 1224 });
@@ -16,8 +19,8 @@ const HeroSodiumAnimation = () => {
         opacity: 0.2,
       }}
       transition={{
-        duration: 0.8,
-        delay: LOADING_SCREEN_DURATION + 0.5,
+        duration: HERO_SODIUM_ANIMATION_DURATION,
+        delay: HERO_SODIUM_ANIMATION_DELAY,
       }}
       style={{
         translateX: "-50%",

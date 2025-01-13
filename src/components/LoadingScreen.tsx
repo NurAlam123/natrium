@@ -3,7 +3,7 @@
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { SodiumLoadingScreen } from "./ui";
-import { LOADING_SCREEN_DURATION } from "@/constants";
+import { LOADING_SCREEN_DURATION } from "@/constants/animation-times";
 
 // Main Loading Screen
 const LoadingScreen = () => {
@@ -14,7 +14,7 @@ const LoadingScreen = () => {
       setTimeout(() => {
         setIsLoading(false);
         // scroll to the hero section
-        window.scrollTo(0, 0);
+        //window.scrollTo(0, 0);
       }, LOADING_SCREEN_DURATION * 1000);
     })();
   });
