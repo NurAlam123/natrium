@@ -15,6 +15,9 @@ const config: Config = {
       container: {
         center: true,
       },
+      backgroundImage: {
+        "dark-gradient": "var(--background-gradient)",
+      },
       colors: {
         dark: "#0a0a0a",
         primary: "#fbfcf8",
