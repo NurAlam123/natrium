@@ -1,8 +1,6 @@
 "use client";
 
-import clsx from "clsx";
-import { twMerge } from "tailwind-merge";
-
+import { cn } from "@/lib/utils";
 import { motion, MotionProps } from "framer-motion";
 
 type SodiumProps = {
@@ -13,7 +11,7 @@ const Sodium = ({ className, ...rest }: SodiumProps) => {
   return (
     <motion.div
       suppressHydrationWarning
-      className={twMerge(clsx("p-2 size-[400px]", className))}
+      className={cn("p-2 size-[400px]", className)}
       {...rest}
       aria-hidden
     >
@@ -100,8 +98,10 @@ const Electron: React.FC<ElectronProps> = ({ halign, valign }) => {
   return (
     <>
       <div
-        className={twMerge(
-          clsx("electron absolute", hPosition[halign], vPosition[valign]),
+        className={cn(
+          "electron absolute",
+          hPosition[halign],
+          vPosition[valign],
         )}
       />
     </>
@@ -113,14 +113,12 @@ const PairElectron: React.FC<
 > = ({ halign, valign, direction }) => {
   return (
     <div
-      className={twMerge(
-        clsx(
-          "flex absolute",
-          direction === "horizontal" && "flex-col -translate-y-1/4 ",
-          direction === "vertical" && "flex-row -translate-x-1/4",
-          hPosition[halign],
-          vPosition[valign],
-        ),
+      className={cn(
+        "flex absolute",
+        direction === "horizontal" && "flex-col -translate-y-1/4 ",
+        direction === "vertical" && "flex-row -translate-x-1/4",
+        hPosition[halign],
+        vPosition[valign],
       )}
     >
       <div className="electron" />
