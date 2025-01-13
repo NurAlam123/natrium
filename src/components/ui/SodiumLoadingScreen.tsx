@@ -6,7 +6,7 @@ import { useMediaQuery } from "react-responsive";
 import { LOADING_SCREEN_DURATION } from "@/constants";
 
 const EXIT_DELAY = LOADING_SCREEN_DURATION;
-const EXIT_DURATION = 0.6;
+const EXIT_DURATION = 0.8;
 const ANIMATION_DELAY = EXIT_DELAY - EXIT_DURATION;
 const ANIMATION_DURATION = EXIT_DELAY - ANIMATION_DELAY;
 
@@ -21,7 +21,7 @@ const SodiumLoadingScreen = () => {
       scale: isDesktop ? 8 : 4,
     },
     animate: {
-      scale: isDesktop ? 2.4 : 1.5,
+      scale: isDesktop ? 2.3 : 1.4,
       top: "50%",
       left: "50%",
       translateX: "-50%",
@@ -33,7 +33,7 @@ const SodiumLoadingScreen = () => {
       },
     },
     exit: {
-      opacity: 0,
+      opacity: 0.1,
       transition: {
         duration: EXIT_DURATION,
         ease: "easeOut",
