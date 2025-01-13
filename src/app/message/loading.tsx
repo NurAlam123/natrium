@@ -1,9 +1,9 @@
-import Loader from "@/components/Loader";
+import LoadingScreen from "@/components/LoadingScreen";
 
 export default function Loading() {
   return (
     <>
-      <Loader />
+      <LoadingScreen />
     </>
   );
 }
