@@ -1,5 +1,5 @@
 import { FaLocationArrow } from "react-icons/fa";
-import { HeroTextFancyAnimation } from "../animation/text";
+import { HeroTextFancyAnimation, TextFlip } from "../animation/text";
 
 const NameAndAddress = () => {
   return (
@@ -8,7 +8,9 @@ const NameAndAddress = () => {
         <span>
           <FaLocationArrow />
         </span>
-        <address>Dhaka, Bangladesh</address>
+        <address className="overflow-hidden">
+          <TextFlip>Dhaka, Bangladesh</TextFlip>
+        </address>
       </div>
       <h1 className="font-bebas-neue font-semibold text-center not-italic sm:text-[64px] text-[81px] md:text-[258px] tracking-wider text-secondary !leading-tight">
         <HeroTextFancyAnimation>Nur Alam</HeroTextFancyAnimation>
