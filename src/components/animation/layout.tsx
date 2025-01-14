@@ -1,7 +1,6 @@
 "use client";
-import { LOADING_SCREEN_DURATION } from "@/constants";
 import { motion, useInView, Variants } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 type Props = {
   children: React.ReactNode;
