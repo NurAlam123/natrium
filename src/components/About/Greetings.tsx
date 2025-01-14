@@ -7,10 +7,10 @@ const Greetings = () => {
       {/* Greetings */}
       <div>
         <SlideIn>
-          <h2 className="mb-4 font-semibold">Hi,</h2>
+          <h2 className="mb-2 md:mb-4 font-semibold">Hi,</h2>
         </SlideIn>
         <SlideIn>
-          <h3 className="mb-4 font-medium">
+          <h3 className="mb-2 md:mb-4 font-medium">
             I am{" "}
             <span className="text-blue font-semibold">
               Nur Alam<span className="animate-ping">.</span>
@@ -18,7 +18,7 @@ const Greetings = () => {
           </h3>
         </SlideIn>
         <SlideIn>
-          <p className="text-daisy mb-6 text-lg">
+          <p className="text-daisy/90 mb-6 text-lg">
             {/* A Web Developer - Currently learning{" "}
               <strong>Web Development</strong> */}
             - <strong className="font-semibold">Front-End Developer</strong>
