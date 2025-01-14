@@ -8,6 +8,7 @@ export default function RootLayout({
 }>) {
   return (
     <section>
+      <div className="fixed h-screen w-screen -z-[999] overflow-hidden noise-background bg-no-repeat" />
       {children}
       <Footer />
       <Toaster position="top-center" reverseOrder={false} />
