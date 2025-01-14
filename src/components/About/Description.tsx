@@ -22,7 +22,11 @@ const Description = () => {
             href={heroProgrammersLink}
             className="text-blue/90"
           >
-            &quot;Hero Programmers&quot;
+            &quot;
+            <span className="underline underline-offset-2">
+              Hero Programmers
+            </span>
+            &quot;
           </a>{" "}
           Discord server and another bot &quot;Maria&quot; as its companion.
         </p>

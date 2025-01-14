@@ -1,17 +1,14 @@
 "use client";
 
 import { HERO_FADE_IN_DELAY } from "@/constants/animation-times";
-import { motion, Variants } from "framer-motion";
+import { motion, MotionProps, Variants } from "framer-motion";
 
 type Props = {
   children: string;
   className?: string;
 };
 
-export const TextFlip: React.FC<{ WhileInView?: boolean } & Props> = ({
-  children,
-  WhileInView = false,
-}) => {
+export const TextFlip: React.FC<Props> = ({ children }) => {
   const DELAY = 0.1;
   const DURATION = 0.2;
 
@@ -22,9 +19,7 @@ export const TextFlip: React.FC<{ WhileInView?: boolean } & Props> = ({
       <span className="sr-only">{children}</span>
       <motion.div
         initial="initial"
-        {...(WhileInView
-          ? { whileInView: "animate", viewport: { once: true, amount: 0.5 } }
-          : { animate: "animate" })}
+        animate="animate"
         className="relative whitespace-nowrap"
       >
         <p>
@@ -124,47 +119,104 @@ export const HeroTextFancyAnimation: React.FC<Props> = ({ children }) => {
   );
 };
 
-export const TextSlideIn: React.FC<Props> = ({ children }) => {
-  const STAGGER_CHILDREN_DELAY = 0.2;
-  const DURATION = 0.1;
+// Text slide in variants
+const textSlideInVariants: Variants = {
+  initial: {
+    y: 50,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+  },
+};
 
-  const variants: Variants = {
-    initial: {
-      y: 50,
-      opacity: 0,
-    },
-    animate: {
-      y: 0,
-      opacity: 1,
-    },
-  };
+const TextSlideInChildren: React.FC<Props & { duration: number }> = ({
+  children,
+  duration,
+}) => {
   const chars = children.toString().split("");
 
   return (
-    <motion.span
-      className="inline-block"
-      initial="initial"
-      animate="animate"
-      transition={{
-        staggerChildren: STAGGER_CHILDREN_DELAY,
-        delayChildren: HERO_FADE_IN_DELAY,
-      }}
-    >
-      <span className="sr-only">{children}</span>
+    <>
       {chars.map((char, i) => (
         <motion.span
           aria-hidden
           key={i}
           className="inline-block"
-          variants={variants}
+          variants={textSlideInVariants}
           transition={{
-            duration: DURATION,
+            duration: duration,
           }}
         >
           {char}
           {char === " " && <>&nbsp;</>}
         </motion.span>
       ))}
+    </>
+  );
+};
+
+const TextSlideInBase: React.FC<
+  Props & MotionProps & { childrenDuration: number }
+> = ({ children, childrenDuration, ...rest }) => {
+  return (
+    <motion.span
+      className="inline-block overflow-hidden"
+      initial="initial"
+      {...rest}
+    >
+      <span className="sr-only">{children}</span>
+      <TextSlideInChildren duration={childrenDuration}>
+        {children}
+      </TextSlideInChildren>
     </motion.span>
+  );
+};
+
+export const TextSlideIn: React.FC<Props> = ({ children }) => {
+  const STAGGER_CHILDREN_DELAY = 0.2;
+  const DURATION = 0.1;
+
+  return (
+    <TextSlideInBase
+      animate="animate"
+      transition={{
+        staggerChildren: STAGGER_CHILDREN_DELAY,
+        delayChildren: HERO_FADE_IN_DELAY,
+      }}
+      childrenDuration={DURATION}
+    >
+      {children}
+    </TextSlideInBase>
+  );
+};
+
+// Text slide in while the container is in view
+export const TextSlideInWhenInView: React.FC<
+  Props & {
+    rootRef?: React.RefObject<Element>;
+    delay?: number;
+  }
+> = ({ children, rootRef, delay = 0.4 }) => {
+  const STAGGER_CHILDREN_DELAY = 0.1;
+  const DURATION = 0.1;
+
+  return (
+    <TextSlideInBase
+      whileInView="animate"
+      viewport={{
+        once: true,
+        amount: 1,
+        ...(rootRef && { root: rootRef }),
+      }}
+      transition={{
+        staggerChildren: STAGGER_CHILDREN_DELAY,
+        delayChildren: delay,
+      }}
+      childrenDuration={DURATION}
+    >
+      {children}
+    </TextSlideInBase>
   );
 };
