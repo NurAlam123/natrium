@@ -5,9 +5,20 @@
 
 /* root style */
 :root {
-  --background-gradient: linear-gradient(120deg, #0b1215, #0a0a0a, #0b1215);
-  background: var(--background-gradient);
-  background-color: #0a0a0a;
+  /*Mesh Gradient*/
+  --background-gradient: radial-gradient(
+      at 20% 71%,
+      hsla(201, 0%, 3%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 82% 30%, hsla(110, 0%, 3%, 1) 0px, transparent 50%),
+    radial-gradient(at 53% 46%, hsla(120, 0%, 3%, 1) 0px, transparent 50%),
+    radial-gradient(at 9% 15%, hsla(197, 31%, 6%, 1) 0px, transparent 50%),
+    radial-gradient(at 87% 85%, hsla(197, 31%, 6%, 1) 0px, transparent 50%),
+    radial-gradient(at 12% 91%, hsla(194, 0%, 9%, 1) 0px, transparent 50%),
+    radial-gradient(at 89% 14%, hsla(60, 0%, 7%, 1) 0px, transparent 50%);
+
+  background-color: hsla(258, 0%, 3%, 1);
   background-repeat: no-repeat;
 
   scroll-behavior: smooth;
@@ -76,6 +87,11 @@
   .electron {
     @apply size-5 rounded-full bg-primary -translate-x-1/2 -translate-y-1/2;
   }
+}
+
+.noise-background {
+  background: var(--background-gradient), url("/noise.svg");
+  filter: contrast(120%);
 }
 
 /* Style the box under mouse cursor  */

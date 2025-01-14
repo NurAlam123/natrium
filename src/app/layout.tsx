@@ -60,6 +60,8 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${bebasNeue.variable} text-primary font-poppins antialiased`}
       >
+        <div className="fixed h-screen w-screen -z-[999] overflow-hidden noise-background bg-no-repeat" />
+
         {children}
       </body>
     </html>

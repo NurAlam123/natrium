@@ -23,7 +23,7 @@ const HeroSodiumAnimation = () => {
         delay: HERO_SODIUM_ANIMATION_DELAY,
       }}
       style={{
-        translateX: "-50%",
+        translateX: isDesktop ? "calc(-50% + 6px)" : "-50%",
         translateY: "-50%",
         top: "50%",
         left: "50%",

@@ -11,7 +11,7 @@ const Sodium = ({ className, ...rest }: SodiumProps) => {
   return (
     <motion.div
       suppressHydrationWarning
-      className={cn("p-2 size-[400px]", className)}
+      className={cn("p-2 size-[350px]", className)}
       {...rest}
       aria-hidden
     >
