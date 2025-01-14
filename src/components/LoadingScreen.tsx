@@ -12,9 +12,9 @@ const LoadingScreen = () => {
   useEffect(() => {
     (async () => {
       setTimeout(() => {
+        window.scrollTo(0, 0);
         setIsLoading(false);
         // scroll to the hero section
-        window.scrollTo(0, 0);
       }, LOADING_SCREEN_DURATION * 1000);
     })();
   });

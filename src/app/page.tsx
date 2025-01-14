@@ -6,6 +6,7 @@ export default function Home() {
   return (
     <>
       <LoadingScreen />
+      {}
       <main className="max-w-screen-2xl mx-auto">
         <Hero />
         <section className="max-w-screen-lg mx-auto">

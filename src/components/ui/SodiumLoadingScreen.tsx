@@ -46,7 +46,7 @@ const SodiumLoadingScreen = () => {
 
   return (
     <motion.div className="bg-dark fixed z-[99] overflow-hidden h-svh w-svw">
-      <div className="noise-background absolute inset-0" />
+      <div className="md:noise-background absolute inset-0" />
       <Sodium
         initial="initial"
         exit="exit"
