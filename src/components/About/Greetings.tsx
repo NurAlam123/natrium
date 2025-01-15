@@ -26,13 +26,16 @@ const Greetings = () => {
             </span>
           </span>
         </h3>
-        <SlideIn>
-          <p className="text-daisy/90 mb-6 text-lg">
-            {/* A Web Developer - Currently learning{" "}
+        <p className="text-daisy/90 mb-6 text-lg">
+          {/* A Web Developer - Currently learning{" "}
               <strong>Web Development</strong> */}
-            - <strong className="font-semibold">Front-End Developer</strong>
-          </p>
-        </SlideIn>
+          <TextSlideInWhenInView words>-</TextSlideInWhenInView>
+          <strong className="font-semibold">
+            <TextSlideInWhenInView words delay={0.8}>
+              Front-End Developer
+            </TextSlideInWhenInView>
+          </strong>
+        </p>
       </div>{" "}
     </>
   );

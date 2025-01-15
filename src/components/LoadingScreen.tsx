@@ -1,15 +1,19 @@
 "use client";
 
 import { AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { SodiumLoadingScreen } from "./ui";
 import { LOADING_SCREEN_DURATION } from "@/constants/animation-times";
+import useLoadingStore from "@/store/loading-screen-store";
 
 // Main Loading Screen
 const LoadingScreen = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const isLoading = useLoadingStore((state) => state.isLoading);
+  const setIsLoading = useLoadingStore((state) => state.setIsLoading);
 
   useEffect(() => {
+    if (!isLoading) return;
+
     // Prevent scrolling in loading screen
     document.body.classList.toggle("no-scroll");
 

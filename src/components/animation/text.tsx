@@ -1,6 +1,7 @@
 "use client";
 
 import { HERO_FADE_IN_DELAY } from "@/constants/animation-times";
+import { textSplit } from "@/lib/utils";
 import { motion, MotionProps, Variants } from "framer-motion";
 
 type Props = {
@@ -12,7 +13,7 @@ export const TextFlip: React.FC<Props> = ({ children }) => {
   const DELAY = 0.1;
   const DURATION = 0.2;
 
-  const chars = children.toString().split("");
+  const chars = textSplit(children.toString());
 
   return (
     <div>
@@ -86,7 +87,8 @@ export const HeroTextFancyAnimation: React.FC<Props> = ({ children }) => {
       fontWeight: [600, 100, 100, 600],
     },
   };
-  const chars = children?.toString().split("");
+
+  const chars = textSplit(children.toString());
   const REPEAT_DELAY = chars ? chars.length * STAGGER_CHILDREN_DELAY + 5 : 0;
 
   return (
@@ -131,11 +133,10 @@ const textSlideInVariants: Variants = {
   },
 };
 
-const TextSlideInChildren: React.FC<Props & { duration: number }> = ({
-  children,
-  duration,
-}) => {
-  const chars = children.toString().split("");
+const TextSlideInChildren: React.FC<
+  Props & { duration: number; words?: boolean }
+> = ({ children, duration, words }) => {
+  const chars = textSplit(children.toString(), words);
 
   return (
     <>
@@ -150,7 +151,7 @@ const TextSlideInChildren: React.FC<Props & { duration: number }> = ({
           }}
         >
           {char}
-          {char === " " && <>&nbsp;</>}
+          {(char === " " || words) && <>&nbsp;</>}
         </motion.span>
       ))}
     </>
@@ -158,8 +159,8 @@ const TextSlideInChildren: React.FC<Props & { duration: number }> = ({
 };
 
 const TextSlideInBase: React.FC<
-  Props & MotionProps & { childrenDuration: number }
-> = ({ children, childrenDuration, ...rest }) => {
+  Props & MotionProps & { childrenDuration: number; words?: boolean }
+> = ({ children, childrenDuration, words = false, ...rest }) => {
   return (
     <motion.span
       className="inline-block overflow-hidden"
@@ -167,7 +168,7 @@ const TextSlideInBase: React.FC<
       {...rest}
     >
       <span className="sr-only">{children}</span>
-      <TextSlideInChildren duration={childrenDuration}>
+      <TextSlideInChildren words={words} duration={childrenDuration}>
         {children}
       </TextSlideInChildren>
     </motion.span>
@@ -197,16 +198,18 @@ export const TextSlideInWhenInView: React.FC<
   Props & {
     rootRef?: React.RefObject<Element>;
     delay?: number;
+    words?: boolean;
   }
-> = ({ children, rootRef, delay = 0.4 }) => {
+> = ({ children, rootRef, delay = 0.4, words = false }) => {
   const STAGGER_CHILDREN_DELAY = 0.1;
   const DURATION = 0.1;
 
   return (
     <TextSlideInBase
+      words={words}
       whileInView="animate"
       viewport={{
-        once: true,
+        //once: true,
         amount: 1,
         ...(rootRef && { root: rootRef }),
       }}
@@ -218,5 +221,47 @@ export const TextSlideInWhenInView: React.FC<
     >
       {children}
     </TextSlideInBase>
+  );
+};
+
+export const TextTilt: React.FC<Props> = ({ children }) => {
+  const chars = textSplit(children.toString(), true);
+
+  const variants: Variants = {
+    initial: {
+      skewY: 10,
+      opacity: 0.7,
+    },
+    animate: {
+      skewY: 0,
+      opacity: 1,
+    },
+  };
+
+  return (
+    <motion.span
+      initial="initial"
+      whileInView="animate"
+      className="inline-block overflow-hidden"
+      viewport={{
+        amount: 1,
+      }}
+      transition={{
+        delay: 0.8,
+      }}
+    >
+      {chars.map((char, i) => (
+        <motion.span
+          key={i}
+          className="inline-block"
+          variants={variants}
+          transition={{
+            duration: 0.4,
+          }}
+        >
+          {char}&nbsp;
+        </motion.span>
+      ))}
+    </motion.span>
   );
 };

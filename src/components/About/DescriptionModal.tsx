@@ -2,6 +2,7 @@
 
 import { heroProgrammersLink } from "@/constants";
 import { Modal } from "../ui";
+import { TextSlideInWhenInView } from "../animation/text";
 import useModalStore from "@/store/modal-store";
 
 const DescriptionModal: React.FC<{ children?: React.ReactNode }> = () => {
@@ -10,7 +11,7 @@ const DescriptionModal: React.FC<{ children?: React.ReactNode }> = () => {
   return (
     <div>
       <div className="text-blue cursor-pointer" onClick={toggleModal}>
-        Read More...
+        <TextSlideInWhenInView words>Read More...</TextSlideInWhenInView>
       </div>
       <Modal>
         <div>
