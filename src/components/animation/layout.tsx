@@ -17,8 +17,8 @@ export const SlideIn: React.FC<
       initial={direction}
       whileInView="animate"
       viewport={{
-        //once: true,
-        amount: 0.2,
+        once: true,
+        //amount: 0.2,
       }}
       variants={{
         left: { x: "-100%", opacity: 0 },
