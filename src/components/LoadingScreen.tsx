@@ -10,11 +10,12 @@ const LoadingScreen = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Prevent scrolling in loading screen
+    document.body.classList.toggle("no-scroll");
+
     (async () => {
       setTimeout(() => {
-        window.scrollTo(0, 0);
         setIsLoading(false);
-        // scroll to the hero section
       }, LOADING_SCREEN_DURATION * 1000);
     })();
   });

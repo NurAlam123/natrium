@@ -16,10 +16,22 @@ export const SlideIn: React.FC<
     <motion.div
       initial={direction}
       whileInView="animate"
+      viewport={{
+        //once: true,
+        amount: 0.2,
+      }}
       variants={{
         left: { x: "-100%", opacity: 0 },
         right: { x: "100%", opacity: 0 },
-        animate: { x: 0, opacity: 1, transition: { duration: 1.5 } },
+        animate: {
+          x: 0,
+          opacity: 1,
+        },
+      }}
+      transition={{
+        //type: "spring",
+        duration: 0.5,
+        delay: 0.5,
       }}
     >
       {children}

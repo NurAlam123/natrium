@@ -28,6 +28,13 @@
   /*user-select: none;*/
 }
 
+/* Prevent scrolling on loading */
+.no-scroll {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Tailwind CSS custom style */
 @layer base {
   h2 {
     @apply font-bold text-4xl md:text-5xl xl:text-6xl;
