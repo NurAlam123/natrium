@@ -12,10 +12,13 @@ const LoadingScreen = () => {
   const setIsLoading = useLoadingStore((state) => state.setIsLoading);
 
   useEffect(() => {
-    if (!isLoading) return;
+    if (!isLoading) {
+      document.body.classList.remove("no-scroll");
+      return;
+    }
 
     // Prevent scrolling in loading screen
-    document.body.classList.toggle("no-scroll");
+    document.body.classList.add("no-scroll");
 
     (async () => {
       setTimeout(() => {
