@@ -9,7 +9,7 @@ const useMouseHoverEffect = () => {
     // For phones
     document.addEventListener("touchmove", touchMoveEvent);
     document.addEventListener("touchend", resetCursorOnEnd);
-  }, []);
+  });
 
   return () => {
     document.removeEventListener("mousemove", mouseMoveEvent);

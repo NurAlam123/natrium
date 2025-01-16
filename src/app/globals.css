@@ -110,6 +110,7 @@
   --visibility-duration: 0s;
   --visibility-timing: ease-in;
   --visibility-delay: 0s;
+
   /* style */
   visibility: var(--visible);
   opacity: 1;
