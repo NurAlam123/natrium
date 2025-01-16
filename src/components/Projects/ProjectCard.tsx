@@ -52,13 +52,37 @@ const ProjectCard = ({
       className="sticky mb-4"
     >
       <div className="p-4 md:p-8 mt-4 h-[428px] md:h-[640px] bg-dark border border-dark-2 rounded-xl flex gap-4 max-w-screen-md mx-auto">
-        <div className="w-8">
-          <Link
-            href={"#"}
-            className="text-2xl font-medium mb-2 text-primary [writing-mode:vertical-lr]"
-          >
-            {title}
-          </Link>
+        <div className="w-8 flex flex-col justify-around md:justify-start">
+          <div>
+            <Link
+              href={"#"}
+              className="text-2xl font-medium mb-2 text-primary [writing-mode:vertical-lr]"
+            >
+              {title}
+            </Link>
+          </div>
+          <div className="mt-6 flex flex-col gap-2 md:gap-4 text-2xl">
+            {links.github && (
+              <a
+                href={links.github}
+                target="_blank"
+                className="text-daisy hover:text-blue/70 transition"
+              >
+                <span className="sr-only">Github</span>
+                <FaGithub aria-hidden focusable={false} />
+              </a>
+            )}
+            {links.live && (
+              <a
+                target="_blank"
+                href={links.live}
+                className="text-daisy hover:text-blue/70 transition"
+              >
+                <span className="sr-only">Live site</span>
+                <FaLink aria-hidden focusable={false} />
+              </a>
+            )}
+          </div>
         </div>
         <div className="space-y-4 flex-1">
           <Image
@@ -84,28 +108,6 @@ const ProjectCard = ({
                 {tech}
               </span>
             ))}
-          </div>
-          <div className="flex gap-2 text-2xl">
-            {links.github && (
-              <a
-                href={links.github}
-                target="_blank"
-                className="text-daisy hover:text-blue/70 transition"
-              >
-                <span className="sr-only">Github</span>
-                <FaGithub aria-hidden focusable={false} />
-              </a>
-            )}
-            {links.live && (
-              <a
-                target="_blank"
-                href={links.live}
-                className="text-daisy hover:text-blue/70 transition"
-              >
-                <span className="sr-only">Live site</span>
-                <FaLink aria-hidden focusable={false} />
-              </a>
-            )}
           </div>
         </div>
       </div>
