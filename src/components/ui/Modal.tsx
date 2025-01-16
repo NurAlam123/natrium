@@ -13,7 +13,10 @@ const modalVariant: Variants = {
   animate: {
     opacity: 1,
   },
-  exit: { opacity: 0, transition: { delay: 0.3, duration: 0.8 } },
+  exit: {
+    opacity: 0,
+    transition: { delay: 0.3, duration: 0.8, ease: "easeInOut" },
+  },
 };
 
 const contentVariant: Variants = {
@@ -29,6 +32,7 @@ const contentVariant: Variants = {
     scale: 0,
     opacity: 0,
     transition: {
+      ease: "easeInOut",
       duration: 0.6,
     },
   },
@@ -54,6 +58,7 @@ const Modal: React.FC<Props> = ({ children }) => {
           exit="exit"
           variants={modalVariant}
           transition={{
+            ease: "easeInOut",
             duration: 0.4,
           }}
           className={cn(
@@ -68,6 +73,7 @@ const Modal: React.FC<Props> = ({ children }) => {
             exit="exit"
             variants={contentVariant}
             transition={{
+              ease: "easeInOut",
               duration: 0.6,
             }}
             className="relative max-w-screen-md rounded-xl border border-dark-3 bg-dark h-[90%] mx-2 p-6 z-[22]"
