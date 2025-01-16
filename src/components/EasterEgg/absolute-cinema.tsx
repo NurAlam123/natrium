@@ -14,7 +14,7 @@ const AbsoluteCinema = () => {
   const timeoutRef = useRef<NodeJS.Timeout | undefined>();
 
   const top = randomNumber(10, 80);
-  const left = randomNumber(60, 600);
+  const left = randomNumber(60, 400);
   const rotate = randomNumber(-45, 45);
 
   const startTheCinema = () => {
