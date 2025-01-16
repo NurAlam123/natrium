@@ -1,9 +1,10 @@
+import AbsoluteCinema from "@/components/EasterEgg/absolute-cinema";
 import { navigation } from "@/constants";
 import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="py-8 md:py-16 flex justify-center items-center text-daisy/70 border-t border-daisy/50">
+    <footer className="relative py-8 md:py-16 flex justify-center items-center text-daisy/70 border-t border-daisy/50">
       <div className="space-y-4">
         <div className="flex flex-col items-center justify-between gap-2">
           <p>Nur Alam &copy; 2024 - 2025.</p>
@@ -21,6 +22,9 @@ const Footer = () => {
             </Link>
           ))}
         </div>
+      </div>
+      <div>
+        <AbsoluteCinema />
       </div>
     </footer>
   );
