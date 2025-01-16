@@ -5,6 +5,7 @@ import { AnimatePresence, motion, Variants } from "framer-motion";
 import { cn } from "@/lib/utils";
 import useModalStore from "@/store/modal-store";
 import useModalEsc from "@/hooks/useModalEsc";
+import { useEffect } from "react";
 
 const modalVariant: Variants = {
   initial: {
@@ -15,7 +16,7 @@ const modalVariant: Variants = {
   },
   exit: {
     opacity: 0,
-    transition: { delay: 0.3, duration: 0.8, ease: "easeInOut" },
+    transition: { delay: 0.2, duration: 0.8, ease: "easeInOut" },
   },
 };
 
@@ -42,16 +43,20 @@ type Props = {
   children: React.ReactNode;
 };
 
-const Modal: React.FC<Props> = ({ children }) => {
+const Modal: React.FC<Props & { id: string }> = ({ children, id }) => {
   const showModal = useModalStore((state) => state.showModal);
   const closeModal = useModalStore((state) => state.closeModal);
-  const toggleModal = useModalStore((state) => state.toggleModal);
+  const modalID = useModalStore((state) => state.modalID);
+
+  const correctModal = showModal && modalID === id;
+
   useModalEsc(closeModal, showModal);
 
   return (
     <AnimatePresence mode="wait">
-      {showModal && (
+      {correctModal && (
         <motion.div
+          id={id}
           key="modal"
           initial="initial"
           animate="animate"
@@ -79,7 +84,7 @@ const Modal: React.FC<Props> = ({ children }) => {
             className="relative max-w-screen-md rounded-xl border border-dark-3 bg-dark h-[90%] mx-2 p-6 z-[22]"
           >
             <button
-              onClick={toggleModal}
+              onClick={closeModal}
               className="absolute flex justify-center items-center top-0 right-0 w-6 h-6 bg-daisy text-dark mx-1 my-1 rounded-full"
             >
               <IoClose />
