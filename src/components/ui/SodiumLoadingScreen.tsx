@@ -21,7 +21,7 @@ const SodiumLoadingScreen = () => {
     initial: {
       left: "0px",
       top: "0px",
-      scale: isDesktop ? 8 : 4,
+      scale: isDesktop ? 8 : 2,
     },
     animate: {
       scale: isDesktop ? 2.3 : 1.4,
