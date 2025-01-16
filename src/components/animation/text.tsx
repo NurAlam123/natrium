@@ -79,14 +79,12 @@ export const TextFlip: React.FC<Props> = ({ children }) => {
 };
 
 export const HeroTextFancyAnimation: React.FC<Props> = ({ children }) => {
-  const STAGGER_CHILDREN_DELAY = 0.8;
-  const DURATION = 1.5;
+  const STAGGER_CHILDREN_DELAY = 0.2;
+  const DURATION = 0.5;
 
   const variants: Variants = {
     animate: {
-      scale: [1, 0.9, 0.9, 1.2, 1],
-      rotateZ: ["0deg", "15deg", "-15deg", "15deg", "0deg"],
-      fontWeight: [600, 100, 100, 600],
+      scale: [1, 1.4, 1],
     },
   };
 
