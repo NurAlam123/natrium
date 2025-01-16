@@ -1,4 +1,3 @@
-import React from "react";
 import DescriptionModal from "./DescriptionModal";
 import { TextSlideInWhenInView, TextTilt } from "../animation/text";
 

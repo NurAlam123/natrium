@@ -16,7 +16,7 @@ const Socials = () => {
               <span className="sr-only">{contact.name}</span>
               <contact.icon focusable={false} aria-hidden />
             </div>
-            <span className="tooltip group-hover:inline-block group-hover:absolute -translate-x-1/2 left-1/2 mt-2">
+            <span className="tooltip group-hover:inline-block group-hover:absolute -translate-x-1/2 left-1/2 -mt-2">
               {contact.name}
             </span>
           </a>

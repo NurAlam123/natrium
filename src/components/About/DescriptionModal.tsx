@@ -10,9 +10,9 @@ const DescriptionModal: React.FC<{ children?: React.ReactNode }> = () => {
 
   return (
     <div>
-      <div className="text-blue cursor-pointer" onClick={toggleModal}>
+      <span className="text-blue cursor-pointer" onClick={toggleModal}>
         <TextSlideInWhenInView words>Read More...</TextSlideInWhenInView>
-      </div>
+      </span>
       <Modal>
         <div>
           <p className="text-secondary/80">

@@ -79,7 +79,7 @@ const DesktopNavbar = () => {
         ease: "easeInOut",
         duration: 0.3,
       }}
-      className="bg-dark border-dark-2 border p-4 text-sm z-10  rounded-xl flex flex-col gap-2 top-0 left-0 -tanslate-x-2"
+      className="bg-dark noise-background border-dark-2 border p-4 text-sm z-10  rounded-xl flex flex-col gap-2 top-0 left-0 -tanslate-x-2"
     >
       {navigation.map((navLink) => (
         <Link

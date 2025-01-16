@@ -4,7 +4,7 @@ import Link from "next/link";
 const MessageLink = () => {
   return (
     <>
-      <p className="font-semibold text-start mt-6 max-w-sm">
+      <p className="font-semibold text-start mt-6 md:mt-8 max-w-sm">
         Want to send an anonymous message?
         <Link href="/message" className="flex text-blue w-fit relative">
           Send here!

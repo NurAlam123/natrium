@@ -37,6 +37,7 @@ export const TextFlip: React.FC<Props> = ({ children }) => {
                 },
               }}
               transition={{
+                ease: "easeOut",
                 duration: DURATION,
                 delay: DELAY * i + HERO_FADE_IN_DELAY,
               }}
@@ -61,6 +62,7 @@ export const TextFlip: React.FC<Props> = ({ children }) => {
                 },
               }}
               transition={{
+                ease: "easeOut",
                 duration: DURATION,
                 delay: DELAY * i + HERO_FADE_IN_DELAY,
               }}
@@ -108,6 +110,7 @@ export const HeroTextFancyAnimation: React.FC<Props> = ({ children }) => {
           variants={variants}
           className="inline-block"
           transition={{
+            ease: "easeOut",
             repeat: Infinity,
             duration: DURATION,
             repeatDelay: REPEAT_DELAY,
@@ -147,6 +150,7 @@ const TextSlideInChildren: React.FC<
           className="inline-block"
           variants={textSlideInVariants}
           transition={{
+            ease: "easeOut",
             duration: duration,
           }}
         >
@@ -247,6 +251,7 @@ export const TextTilt: React.FC<Props> = ({ children }) => {
         amount: 1,
       }}
       transition={{
+        ease: "easeOut",
         delay: 0.8,
       }}
     >
@@ -256,6 +261,7 @@ export const TextTilt: React.FC<Props> = ({ children }) => {
           className="inline-block"
           variants={variants}
           transition={{
+            ease: "easeOut",
             duration: 0.4,
           }}
         >

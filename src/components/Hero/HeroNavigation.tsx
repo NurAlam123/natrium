@@ -1,6 +1,5 @@
 import { navigation } from "@/constants";
 import Link from "next/link";
-import React from "react";
 
 const HeroNavigation = () => {
   return (
