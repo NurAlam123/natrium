@@ -1,5 +1,6 @@
 "use client";
 
+import { TextSlideInWhenInView } from "@/components/animation/text";
 import { ProjectCard } from "@/components/Projects";
 import { projects } from "@/constants";
 
@@ -16,7 +17,9 @@ const Projects = () => {
 
   return (
     <section id="projects" className="mx-4 py-12">
-      <h2 className="mb-6">Projects</h2>
+      <h2 className="mb-6">
+        <TextSlideInWhenInView>Projects</TextSlideInWhenInView>
+      </h2>
       <div className="md:p-2 flex gap-4 flex-col">
         {projects.map((project, index) => (
           <ProjectCard
