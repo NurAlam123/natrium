@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { TextSlideInWhenInView } from "../animation/text";
-import { SlideIn } from "../animation/layout";
+import { SlideUp } from "../animation/layout";
 
 const Greetings = () => {
   const nameRef = useRef<HTMLHeadingElement>(null);
@@ -26,16 +26,13 @@ const Greetings = () => {
             </span>
           </span>
         </h3>
-        <p className="text-daisy/90 mb-6 text-lg">
-          {/* A Web Developer - Currently learning{" "}
+        <SlideUp>
+          <p className="text-daisy/90 mb-6 text-lg">
+            {/* A Web Developer - Currently learning{" "}
               <strong>Web Development</strong> */}
-          <TextSlideInWhenInView words>-</TextSlideInWhenInView>
-          <strong className="font-semibold">
-            <TextSlideInWhenInView words delay={0.8}>
-              Front-End Developer
-            </TextSlideInWhenInView>
-          </strong>
-        </p>
+            - <strong className="font-semibold">Front-End Developer</strong>
+          </p>
+        </SlideUp>
       </div>{" "}
     </>
   );

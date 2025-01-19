@@ -1,6 +1,6 @@
 "use client";
 import { motion, useInView, Variants } from "framer-motion";
-import { useRef } from "react";
+import React, { useRef } from "react";
 
 type Props = {
   children: React.ReactNode;
@@ -48,6 +48,46 @@ export const BlurOut: React.FC<Props> = ({ children }) => {
     >
       {children}
     </motion.div>
+  );
+};
+
+export const SlideUp: React.FC<{
+  children: React.ReactNode;
+  className?: string;
+}> = ({ children, className }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const isInView = useInView(containerRef, { amount: 0.8 });
+
+  const slideUpVariants: Variants = {
+    initial: {
+      y: 50,
+      scale: 0.98,
+      opacity: 0,
+    },
+    show: {
+      y: 0,
+      scale: 1,
+      opacity: 1,
+    },
+  };
+
+  return (
+    <div ref={containerRef} className="overflow-hidden">
+      <motion.div
+        animate={isInView ? "show" : "initial"}
+        variants={slideUpVariants}
+        className={className}
+        viewport={{}}
+        transition={{
+          ease: "easeOut",
+          duration: 0.5,
+          delay: 0.4,
+        }}
+      >
+        {children}
+      </motion.div>
+    </div>
   );
 };
 

@@ -1,32 +1,28 @@
 import DescriptionModal from "./DescriptionModal";
-import { TextSlideInWhenInView, TextTilt } from "../animation/text";
+import { SlideUp } from "../animation/layout";
 
 const Description = () => {
   return (
     <>
       {/* Description */}
       <div className="max-w-screen-md mb-6 text-lg">
-        <p className="text-secondary font-medium">
-          <TextTilt>
+        <SlideUp>
+          <p className="text-secondary font-medium">
             I love building clean, responsive, and interactive websites using
             modern frontend technologies.
-          </TextTilt>
-        </p>
+          </p>
+        </SlideUp>
         <DescriptionModal />
         <div className="text-secondary mt-4">
-          <p className="font-medium">
-            <TextTilt>Got an idea?</TextTilt>
-          </p>
-          <p>
-            <TextTilt>
+          <SlideUp>
+            <p className="font-medium">Got an idea?</p>
+          </SlideUp>
+          <SlideUp>
+            <p>
               OH GREAT!! Let&apos;s make it happen - Shoot me a message at
-            </TextTilt>{" "}
-            <span className="font-bold">
-              <TextSlideInWhenInView words>
-                nuralam.rsc@gmail.com
-              </TextSlideInWhenInView>
-            </span>
-          </p>
+              <span className="font-bold">nuralam.rsc@gmail.com</span>
+            </p>
+          </SlideUp>
         </div>
       </div>
     </>

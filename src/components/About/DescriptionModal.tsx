@@ -2,22 +2,24 @@
 
 import { heroProgrammersLink } from "@/constants";
 import { Modal } from "../ui";
-import { TextSlideInWhenInView } from "../animation/text";
 import useModalStore from "@/store/modal-store";
+import { SlideUp } from "../animation/layout";
 
 const DescriptionModal: React.FC<{ children?: React.ReactNode }> = () => {
   const toggleModal = useModalStore((state) => state.toggleModal);
 
   return (
     <div>
-      <span
-        className="text-blue cursor-pointer"
-        onClick={() => toggleModal("description-modal")}
-      >
-        <TextSlideInWhenInView words>Read More...</TextSlideInWhenInView>
-      </span>
+      <SlideUp>
+        <span
+          className="text-blue cursor-pointer"
+          onClick={() => toggleModal("description-modal")}
+        >
+          Read More...
+        </span>
+      </SlideUp>
       <Modal id="description-modal">
-        <div>
+        <div className="space-y-4">
           <p className="text-secondary/80">
             I am also interested in AI/ML, Bot Development, and Competitive
             Programming.
