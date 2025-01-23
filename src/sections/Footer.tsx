@@ -1,4 +1,5 @@
 import AbsoluteCinema from "@/components/EasterEgg/absolute-cinema";
+import RickRoll from "@/components/EasterEgg/rick-roll";
 import { navigation } from "@/constants";
 import Link from "next/link";
 
@@ -25,6 +26,7 @@ const Footer = () => {
       </div>
       <div>
         <AbsoluteCinema />
+        <RickRoll />
       </div>
     </footer>
   );

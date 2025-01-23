@@ -4,39 +4,39 @@ import { randomNumber } from "@/lib/utils";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useRef, useState } from "react";
-import AbsoluteCinemaScreen from "./AbsoluteCinemaScreen";
+import RickRollVideo from "./RickRollVideo";
 
 const DURATION = 18;
 const DELAY = 22;
 
-const AbsoluteCinema = () => {
-  const [startCinema, setStartCinema] = useState(false);
+const RickRoll = () => {
+  const [startRoll, setStartRoll] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | undefined>();
 
   const top = randomNumber(10, 80);
-  const left = randomNumber(60, 400);
+  const right = randomNumber(60, 400);
   const rotate = randomNumber(-45, 45);
 
-  const startTheCinema = () => {
-    setStartCinema(true);
-    const timeoutID = setTimeout(stopTheCinema, DELAY * 1000);
+  const startTheRoll = () => {
+    setStartRoll(true);
+    const timeoutID = setTimeout(stopTheRoll, DELAY * 1000);
     timeoutRef.current = timeoutID;
   };
 
-  const stopTheCinema = () => {
+  const stopTheRoll = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    setStartCinema(false);
+    setStartRoll(false);
   };
 
   return (
     <>
       <AnimatePresence mode="wait">
-        {startCinema && (
+        {startRoll && (
           <>
-            <AbsoluteCinemaScreen
-              key="absolute-cinema"
+            <RickRollVideo
+              key="rick-roll"
               duration={DURATION}
-              close={stopTheCinema}
+              close={stopTheRoll}
             />
           </>
         )}
@@ -46,14 +46,14 @@ const AbsoluteCinema = () => {
         suppressHydrationWarning
         style={{
           top: `${top}px`,
-          left: `${left}px`,
+          right: `${right}px`,
           rotate: `${rotate}deg`,
           mixBlendMode: "overlay",
         }}
-        onClick={startTheCinema}
+        onClick={startTheRoll}
       >
         <Image
-          src="/absolute-cinema.webp"
+          src="/rock_egg.webp"
           alt="absolute cinema easter egg"
           width={100}
           height={100}
@@ -64,4 +64,4 @@ const AbsoluteCinema = () => {
   );
 };
 
-export default AbsoluteCinema;
+export default RickRoll;
