@@ -8,6 +8,7 @@ export default function Home() {
   return (
     <>
       <CursorBlur />
+      <LoadingScreen />
       <main className="max-w-screen-2xl mx-auto">
         <Hero />
         <section className="relative max-w-screen-lg mx-auto">
