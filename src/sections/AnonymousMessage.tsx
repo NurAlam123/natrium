@@ -24,7 +24,7 @@ const AnonymousMessage = () => {
     setCharacters(textLength);
   };
 
-  const handleSendBtn = async (prevState: object, formData: FormData) => {
+  const handleSendBtn = async (_: object, formData: FormData) => {
     setDisableButton(true);
     const message = formData.get("message") as string;
     setUserMessage(message);
@@ -55,7 +55,7 @@ const AnonymousMessage = () => {
               <textarea
                 id="message"
                 name="message"
-                className="outline-none p-5 rounded-lg border-2 border-dark-3 bg-dark-1 text-daisy h-[300px] resize-none focus:border-blue transition-colors duration-300"
+                className="w-full max-w-xs outline-none p-5 rounded-lg border-2 border-dark-3 bg-dark-1 text-daisy h-[300px] resize-none focus:border-blue transition-colors duration-300"
                 placeholder="Write it down here..."
                 defaultValue={userMessage}
                 maxLength={charactersLimit}

@@ -9,7 +9,7 @@ export const meta = {
     description:
       "Hi! I am Nur, a Frontend Developer living in Dhaka, Bangladesh. I love creating creative, soothing websites",
     bannerImage: "/natrium.png",
-    url: "https://nuralam.vercel.app",
+    url: "https://natrium.pages.dev",
     keywords: [
       "web development",
       "portfolio",
