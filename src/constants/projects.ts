@@ -17,7 +17,7 @@ const projects: Array<ProjectCardType> = [
     techs: ["Next.js", "Tailwnd CSS", "Framer Motion"],
     links: {
       github: "https://github.com/NurAlam123/bento",
-      live: "https://lightento.vercel.app/",
+      live: "https://lightbento.pages.dev/",
     },
   },
   {
@@ -45,7 +45,7 @@ const projects: Array<ProjectCardType> = [
     techs: ["Next.js", "Tailwnd CSS", "Framer Motion"],
     links: {
       github: "https://github.com/nuralam123/natala",
-      live: "https://natala.vercel.app/",
+      live: "https://natala.pages.dev/",
     },
   },
   {
@@ -59,7 +59,7 @@ const projects: Array<ProjectCardType> = [
     techs: ["Next.js", "Tailwnd CSS", "Framer Motion"],
     links: {
       github: "https://github.com/nuralam123/Cogni",
-      live: "https://cogni-tau.vercel.app/",
+      live: "https://cogni-adv.pages.dev/",
     },
   },
   {
